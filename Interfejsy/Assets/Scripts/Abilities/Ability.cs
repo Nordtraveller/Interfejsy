@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public enum damageType
 {
     None,
@@ -11,6 +12,7 @@ public enum damageType
     Physical
 }
 
+[System.Serializable]
 public enum keyBind
 {
     None,
@@ -22,6 +24,7 @@ public enum keyBind
     Y
 }
 
+[System.Serializable]
 public enum keyBindType
 {
     None,
