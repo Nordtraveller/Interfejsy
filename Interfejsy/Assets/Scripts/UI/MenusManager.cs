@@ -21,22 +21,41 @@ public class MenusManager : MonoBehaviour {
         }
     }
 
+    void Start()
+    {
+        QuitAllMenus();
+    }
+
+    public void QuitAllMenus()
+    {
+        QuitMenu();
+        skillTree.gameObject.SetActive(false);
+        skillTree.enabled = false;
+        equipmentMenu.gameObject.SetActive(false);
+        equipmentMenu.enabled = false;
+        abillitiesMenu.gameObject.SetActive(false);
+        abillitiesMenu.enabled = false;
+        quitMenu.gameObject.SetActive(false);
+        quitMenu.enabled = false;
+    }
+
     public void Quit() {
         Debug.LogError("Game Quitted");
         Application.Quit();
     }
 
     public void OpenMenu() {
+        gameplayMenu.gameObject.SetActive(true);
         gameplayMenu.enabled = true;
     }
 
     public void QuitMenu() {
+        gameplayMenu.gameObject.SetActive(false);
         gameplayMenu.enabled = false;
     }
 
     public void OpenSkillTree() {
-        gameplayMenu.gameObject.SetActive(false);
-        gameplayMenu.enabled = false;
+        QuitMenu();
         skillTree.gameObject.SetActive(true);
         skillTree.enabled = true;
     }
@@ -49,8 +68,7 @@ public class MenusManager : MonoBehaviour {
     }
 
     public void OpenEquipmentMenu() {
-        gameplayMenu.gameObject.SetActive(false);
-        gameplayMenu.enabled = false;
+        QuitMenu();
         equipmentMenu.gameObject.SetActive(true);
         equipmentMenu.enabled = true;
     }
@@ -63,8 +81,7 @@ public class MenusManager : MonoBehaviour {
     }
     public void OpenAbillitiesMenu()
     {
-        gameplayMenu.gameObject.SetActive(false);
-        gameplayMenu.enabled = false;
+        QuitMenu();
         abillitiesMenu.gameObject.SetActive(true);
         abillitiesMenu.enabled = true;
     }
@@ -79,8 +96,7 @@ public class MenusManager : MonoBehaviour {
 
     public void OpenQuitMenu()
     {
-        gameplayMenu.gameObject.SetActive(false);
-        gameplayMenu.enabled = false;
+        QuitMenu();
         quitMenu.gameObject.SetActive(true);
         quitMenu.enabled = true;
     }

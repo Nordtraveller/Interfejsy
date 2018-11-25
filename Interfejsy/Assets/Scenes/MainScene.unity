@@ -2314,7 +2314,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1565490091
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2392,7 +2392,18 @@ MonoBehaviour:
     colCount: 1
   onMenuClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1044539595}
+        m_MethodName: QuitMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   defaultGridPosition: {x: 0, y: 0}
@@ -3625,6 +3636,7 @@ GameObject:
   - component: {fileID: 2125276967}
   - component: {fileID: 2125276969}
   - component: {fileID: 2125276968}
+  - component: {fileID: 2125276970}
   m_Layer: 5
   m_Name: WszystkoCoWidziszOczamiWyobrazni
   m_TagString: Untagged
@@ -3684,6 +3696,38 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2125276966}
   m_CullTransparentMesh: 0
+--- !u!114 &2125276970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2125276966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cc0f5939f16912479925b6e1b078659, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemsView:
+    data: []
+    rowCount: 0
+    colCount: 0
+  onMenuClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1044539595}
+        m_MethodName: OpenMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  defaultGridPosition: {x: 0, y: 0}
 --- !u!1 &2144178205
 GameObject:
   m_ObjectHideFlags: 0
