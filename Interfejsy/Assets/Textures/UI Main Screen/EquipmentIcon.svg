@@ -16,7 +16,10 @@
    inkscape:version="0.91 r13725"
    viewBox="0 0 256 256"
    style="enable-background:new"
-   sodipodi:docname="EquipmentIcon.svg">
+   sodipodi:docname="EquipmentIcon.svg"
+   inkscape:export-filename="E:\Uczelnia\Semestr VII\Projektowanie Interfejsów\Interfejsy\Interfejsy\Assets\Textures\UI Main Screen\EquipmentIcon.png"
+   inkscape:export-xdpi="180"
+   inkscape:export-ydpi="180">
   <defs
      id="defs4138">
     <filter
@@ -40,10 +43,10 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.9722718"
-     inkscape:cx="115.83348"
-     inkscape:cy="150.97484"
-     inkscape:current-layer="layer3"
+     inkscape:zoom="1.375"
+     inkscape:cx="96.812057"
+     inkscape:cy="67.500341"
+     inkscape:current-layer="layer2"
      showgrid="true"
      inkscape:document-units="px"
      inkscape:grid-bbox="true"
@@ -111,8 +114,7 @@
      id="layer2"
      inkscape:label="Text"
      transform="translate(0,192)"
-     style="display:inline"
-     sodipodi:insensitive="true">
+     style="display:inline">
     <flowRoot
        xml:space="preserve"
        id="flowRoot4689"
@@ -126,7 +128,7 @@
            y="199.94572"
            style="fill:#ffffff;stroke:#808080;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" /></flowRegion><flowPara
          id="flowPara4695"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;font-family:'Stencil Std';-inkscape-font-specification:'Stencil Std Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke:#808080;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">EQUIPMENT</flowPara></flowRoot>  </g>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;font-family:'Stencil Std';-inkscape-font-specification:'Stencil Std Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke:#808080;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">Character</flowPara></flowRoot>  </g>
   <g
      inkscape:groupmode="layer"
      id="layer3"
