@@ -33,33 +33,45 @@ public class MenusManager : MonoBehaviour {
     }
 
     public void OpenSkillTree() {
+        gameplayMenu.gameObject.SetActive(false);
         gameplayMenu.enabled = false;
+        skillTree.gameObject.SetActive(true);
         skillTree.enabled = true;
     }
 
     public void QuitSkillTree() {
+        skillTree.gameObject.SetActive(false);
         skillTree.enabled = false;
+        gameplayMenu.gameObject.SetActive(true);
         gameplayMenu.enabled = true;
     }
 
     public void OpenEquipmentMenu() {
+        gameplayMenu.gameObject.SetActive(false);
         gameplayMenu.enabled = false;
+        equipmentMenu.gameObject.SetActive(true);
         equipmentMenu.enabled = true;
     }
 
     public void QuipEquipmentMenu() {
+        equipmentMenu.gameObject.SetActive(false);
         equipmentMenu.enabled = false;
+        gameplayMenu.gameObject.SetActive(true);
         gameplayMenu.enabled = true;
     }
     public void OpenAbillitiesMenu()
     {
-        abillitiesMenu.enabled = false;
-        equipmentMenu.enabled = true;
+        gameplayMenu.gameObject.SetActive(false);
+        gameplayMenu.enabled = false;
+        abillitiesMenu.gameObject.SetActive(true);
+        abillitiesMenu.enabled = true;
     }
 
     public void QuipAbillitiesMenu()
     {
+        abillitiesMenu.gameObject.SetActive(false);
         abillitiesMenu.enabled = false;
+        gameplayMenu.gameObject.SetActive(true);
         gameplayMenu.enabled = true;
     }
 }
