@@ -46,7 +46,9 @@ public class Grid : MonoBehaviour {
         if (input.A) {
             currentItem.Click();
         }
-
+        if (input.X) {
+            currentItem.DetailClick();
+        }
 
     }
 
