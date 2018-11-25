@@ -51,4 +51,15 @@ public class MenusManager : MonoBehaviour {
         equipmentMenu.enabled = false;
         gameplayMenu.enabled = true;
     }
+    public void OpenAbillitiesMenu()
+    {
+        abillitiesMenu.enabled = false;
+        equipmentMenu.enabled = true;
+    }
+
+    public void QuipAbillitiesMenu()
+    {
+        abillitiesMenu.enabled = false;
+        gameplayMenu.enabled = true;
+    }
 }
