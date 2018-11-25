@@ -544,7 +544,7 @@ GameObject:
   - component: {fileID: 275023352}
   - component: {fileID: 275023351}
   m_Layer: 0
-  m_Name: Text
+  m_Name: AmountOfSkillsToAddText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -600,9 +600,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '4 skills
-
-    to ADD'
+  m_Text: 
 --- !u!222 &275023352
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1146,7 +1144,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &506223240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2631,6 +2629,7 @@ GameObject:
   - component: {fileID: 1044539594}
   - component: {fileID: 1044539595}
   - component: {fileID: 1044539596}
+  - component: {fileID: 1044539597}
   m_Layer: 0
   m_Name: GameManagers
   m_TagString: Untagged
@@ -2685,6 +2684,18 @@ MonoBehaviour:
   statPointsSpend: 0
   statPointsToSpend: 4
   abilities: []
+--- !u!114 &1044539597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1044539593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64bd60d50c9135045b308145783211ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statPointsToSpendText: {fileID: 275023351}
 --- !u!1 &1055607181
 GameObject:
   m_ObjectHideFlags: 0
@@ -3701,7 +3712,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1565490091
 RectTransform:
   m_ObjectHideFlags: 0
