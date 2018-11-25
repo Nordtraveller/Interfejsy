@@ -23,6 +23,8 @@ public class Player : MonoBehaviour {
     public int level = 1;
     public int statPointsSpend = 0;
     public int statPointsToSpend = 0;
+    public int skillPointsSpend = 0;
+    public int skillPointsToSpend = 0;
     public List<Ability> abilities;
     static Player myInstance;
 
@@ -64,6 +66,7 @@ public class Player : MonoBehaviour {
     {
         level += 1;
         statPointsToSpend += 3;
+        GetComponent<ImageManager>().setStatsActivity();
     }
 
     public void AddToStat(int index)
@@ -72,6 +75,7 @@ public class Player : MonoBehaviour {
         {
             statPointsToSpend -= 1;
             stats[index] += 1;
+            GetComponent<ImageManager>().setStatsActivity();
         }
     }
 
