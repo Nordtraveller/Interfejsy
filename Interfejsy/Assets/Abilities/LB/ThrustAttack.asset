@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf03a3b275914194ab3551827ba37d7f, type: 3}
   m_Name: ThrustAttack
   m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 06207758aca83f443a34b43d5a6cfe51, type: 3}
   manaCost: 0
   coolDown: 0
   damage: 2

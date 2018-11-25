@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf03a3b275914194ab3551827ba37d7f, type: 3}
   m_Name: FastAttack
   m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: ee72e9584caca0145b9bfef5f6310dd0, type: 3}
   manaCost: 0
   coolDown: 0
   damage: 1

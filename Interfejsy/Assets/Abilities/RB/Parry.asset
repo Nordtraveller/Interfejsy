@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf03a3b275914194ab3551827ba37d7f, type: 3}
   m_Name: Parry
   m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 38a24960513ed1b48b48064dfc8d4357, type: 3}
   manaCost: 0
   coolDown: 0
   damage: 0

@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf03a3b275914194ab3551827ba37d7f, type: 3}
   m_Name: Block
   m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: fdc9a50822d18484e918484c5450c9d7, type: 3}
   manaCost: 0
   coolDown: 0
   damage: 0

@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf03a3b275914194ab3551827ba37d7f, type: 3}
   m_Name: Fireball
   m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 636580d8d0a7f2f41806b20eb863de7f, type: 3}
   manaCost: 90
   coolDown: 5
   damage: 10

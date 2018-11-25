@@ -4,6 +4,7 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "Ability", menuName = "Ability/Stats", order = 1)]
 public class AbilityStats : ScriptableObject {
+    public Sprite icon;
     public int manaCost = 0;
     public int coolDown = 0;
     public int damage = 0;
