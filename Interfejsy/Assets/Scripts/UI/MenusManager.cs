@@ -5,8 +5,9 @@ using UnityEngine;
 public class MenusManager : MonoBehaviour {
 
     [SerializeField] private Grid gameplayMenu;
-    [SerializeField] private Grid skillTree;
     [SerializeField] private Grid equipmentMenu;
+    [SerializeField] private Grid abillitiesMenu;
+    [SerializeField] private Grid skillTree;
 
     static MenusManager instance_;
     public static MenusManager instance {
