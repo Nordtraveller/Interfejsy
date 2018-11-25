@@ -8,6 +8,7 @@ public class MenusManager : MonoBehaviour {
     [SerializeField] private Grid equipmentMenu;
     [SerializeField] private Grid abillitiesMenu;
     [SerializeField] private Grid skillTree;
+    [SerializeField] private Grid quitMenu;
 
     static MenusManager instance_;
     public static MenusManager instance {
@@ -21,6 +22,7 @@ public class MenusManager : MonoBehaviour {
     }
 
     public void Quit() {
+        Debug.LogError("Game Quitted");
         Application.Quit();
     }
 
@@ -53,7 +55,7 @@ public class MenusManager : MonoBehaviour {
         equipmentMenu.enabled = true;
     }
 
-    public void QuipEquipmentMenu() {
+    public void QuitEquipmentMenu() {
         equipmentMenu.gameObject.SetActive(false);
         equipmentMenu.enabled = false;
         gameplayMenu.gameObject.SetActive(true);
@@ -67,10 +69,26 @@ public class MenusManager : MonoBehaviour {
         abillitiesMenu.enabled = true;
     }
 
-    public void QuipAbillitiesMenu()
+    public void QuitAbillitiesMenu()
     {
         abillitiesMenu.gameObject.SetActive(false);
         abillitiesMenu.enabled = false;
+        gameplayMenu.gameObject.SetActive(true);
+        gameplayMenu.enabled = true;
+    }
+
+    public void OpenQuitMenu()
+    {
+        gameplayMenu.gameObject.SetActive(false);
+        gameplayMenu.enabled = false;
+        quitMenu.gameObject.SetActive(true);
+        quitMenu.enabled = true;
+    }
+
+    public void QuitQuitMenu()
+    {
+        quitMenu.gameObject.SetActive(false);
+        quitMenu.enabled = false;
         gameplayMenu.gameObject.SetActive(true);
         gameplayMenu.enabled = true;
     }
