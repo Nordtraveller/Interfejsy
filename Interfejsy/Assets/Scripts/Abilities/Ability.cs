@@ -27,7 +27,7 @@ public class Ability : MonoBehaviour {
     [SerializeField] public AbilityStats abilityStats;
     private int currentCooldown = 0;
     private float lastCdUpdate = 0.0f;
-    private bool changeAbility;
+    public bool changeAbility;
 
 
     // Use this for initialization
@@ -85,6 +85,12 @@ public class Ability : MonoBehaviour {
 
     public void ActivateChangeAbility()
     {
+        if (this.changeAbility)
+        {
+            this.changeAbility = false;
+            return;
+        }
+
         for (int i = 0; i < 6; i++)
         {
             if (GameObject.Find("GameManagers").GetComponent<Player>().currentAbilities[i].changeAbility)
@@ -94,6 +100,7 @@ public class Ability : MonoBehaviour {
             }
         }
         this.changeAbility = true;
+
     }
 
     public void ChangeAbility()

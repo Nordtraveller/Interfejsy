@@ -15,6 +15,8 @@ public class ImageManager : MonoBehaviour {
     [SerializeField] private Image bAbility;
     [SerializeField] private Image yAbility;
     [SerializeField] private Image rbAbility;
+    [SerializeField] private Image[] abilityChanging;
+
     // Use this for initialization
     void Start () {
         setStatsActivity();
@@ -48,6 +50,18 @@ public class ImageManager : MonoBehaviour {
             bAbility.sprite = GetComponent<Player>().currentAbilities[3].abilityStats.icon;
             yAbility.sprite = GetComponent<Player>().currentAbilities[4].abilityStats.icon;
             rbAbility.sprite = GetComponent<Player>().currentAbilities[5].abilityStats.icon;
+            for(int i=0; i<6; i++)
+            {
+                if (GetComponent<Player>().currentAbilities[i].changeAbility)
+                {
+                    //abilityChanging[i].GetComponentInParent<GameObject>().SetActive(true);
+                    abilityChanging[i].gameObject.SetActive(true);
+                } else
+                {
+                    //abilityChanging[i].GetComponentInParent<GameObject>().SetActive(false);
+                    abilityChanging[i].gameObject.SetActive(false);
+                }
+            }
         }
     }
 
