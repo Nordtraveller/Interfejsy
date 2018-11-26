@@ -16,6 +16,7 @@ public class ImageManager : MonoBehaviour {
     [SerializeField] private Image yAbility;
     [SerializeField] private Image rbAbility;
     [SerializeField] private Image[] abilityChanging;
+    [SerializeField] private Image changeAbilityButton;
 
     // Use this for initialization
     void Start () {
@@ -25,6 +26,7 @@ public class ImageManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         updateCurrentAbilities();
+        ManageChangeAbilityButton();
     }
 
     public void setStatsActivity()
@@ -54,14 +56,37 @@ public class ImageManager : MonoBehaviour {
             {
                 if (GetComponent<Player>().currentAbilities[i].changeAbility)
                 {
-                    //abilityChanging[i].GetComponentInParent<GameObject>().SetActive(true);
                     abilityChanging[i].gameObject.SetActive(true);
                 } else
                 {
-                    //abilityChanging[i].GetComponentInParent<GameObject>().SetActive(false);
                     abilityChanging[i].gameObject.SetActive(false);
                 }
             }
+        }
+    }
+
+    void ManageChangeAbilityButton()
+    {
+        if (GetComponent<MenusManager>().abillitiesMenu.enabled)
+        {
+            for(int i=0; i<6; i++)
+            {
+                if (GetComponent<MenusManager>().abillitiesMenu.currentItem.GetComponent<Ability>() ==
+                    GetComponent<Player>().currentAbilities[i]) 
+                {
+                    changeAbilityButton.gameObject.SetActive(true);
+                    return;
+                }
+                if (GetComponent<Player>().currentAbilities[i].changeAbility && 
+                    (GetComponent<MenusManager>().abillitiesMenu.currentItem.GetComponent<Ability>().abilityStats.keyBindType
+                    == GetComponent<Player>().currentAbilities[i].abilityStats.keyBindType))
+                {
+                    changeAbilityButton.gameObject.SetActive(true);
+                    return;
+                }
+            }
+            changeAbilityButton.gameObject.SetActive(false);
+
         }
     }
 
