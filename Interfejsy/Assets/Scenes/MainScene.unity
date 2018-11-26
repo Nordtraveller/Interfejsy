@@ -2714,6 +2714,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   defaultGridPosition: {x: 0, y: 3}
+  currentItem: {fileID: 0}
 --- !u!224 &506223241
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6562,6 +6563,7 @@ MonoBehaviour:
   agility: {fileID: 1696084442}
   intelligence: {fileID: 1747152526}
   charisma: {fileID: 184302760}
+  abilityDescription: {fileID: 1248231435}
 --- !u!114 &1044539598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6986,6 +6988,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   defaultGridPosition: {x: 0, y: 0}
+  currentItem: {fileID: 0}
 --- !u!224 &1116127608
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7970,7 +7973,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 410, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1248231435
 MonoBehaviour:
@@ -9849,6 +9852,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   defaultGridPosition: {x: 0, y: 0}
+  currentItem: {fileID: 0}
 --- !u!1 &1566179402
 GameObject:
   m_ObjectHideFlags: 0
@@ -10065,6 +10069,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   defaultGridPosition: {x: 0, y: 0}
+  currentItem: {fileID: 0}
 --- !u!114 &1576136336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12415,6 +12420,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   defaultGridPosition: {x: 0, y: 0}
+  currentItem: {fileID: 0}
 --- !u!114 &1944260924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13639,6 +13645,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   defaultGridPosition: {x: 0, y: 0}
+  currentItem: {fileID: 0}
 --- !u!1 &2144178205
 GameObject:
   m_ObjectHideFlags: 0

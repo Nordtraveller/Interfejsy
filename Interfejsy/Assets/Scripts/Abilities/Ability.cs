@@ -70,4 +70,31 @@ public class Ability : MonoBehaviour {
             currentCooldown = abilityStats.coolDown;
         }    
     }
+
+    public string GetCompleteDescription()
+    {
+        string result = abilityStats.name;
+        if (abilityStats.manaCost > 0)
+        {
+            result += "\tmana:" + abilityStats.manaCost;
+        }
+        else
+        {
+            result += "\t";
+        }
+        if (abilityStats.damage > 0)
+        {
+            result += "\tdamage:" + abilityStats.damage + "(" + abilityStats.dmgtype + ")";
+        }
+        else
+        {
+            result += "\t";
+        }
+        if (abilityStats.coolDown > 0)
+        {
+            result += "\tcd:" + abilityStats.coolDown;
+        }
+        result += "\n\n" + abilityStats.description;
+        return result;
+    }
 }

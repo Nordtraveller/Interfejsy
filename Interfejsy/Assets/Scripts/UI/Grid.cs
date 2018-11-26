@@ -11,7 +11,7 @@ public class Grid : MonoBehaviour {
     [SerializeField] private Vector2Int defaultGridPosition;
 
     private Vector2Int currentItemPosition;
-    private GridItem currentItem;
+    public GridItem currentItem;
 
     private void Awake() {
         if (defaultGridPosition == null) {
