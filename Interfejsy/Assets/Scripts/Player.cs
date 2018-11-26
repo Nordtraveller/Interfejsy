@@ -30,7 +30,7 @@ public class Player : MonoBehaviour {
     [SerializeField] public List<Skill> skills;
     [SerializeField] public List<Skill> unlockedSkills;
 
-    [SerializeField] public List<Item> items;
+    [SerializeField] public List<Item> currentItems;
     [SerializeField] public List<Item> allItems;
 
 

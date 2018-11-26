@@ -14,6 +14,7 @@ public class TextManager : MonoBehaviour {
     [SerializeField] private Text charisma;
     [SerializeField] private Text abilityDescription;
     [SerializeField] private Text skillDescription;
+    [SerializeField] private Text itemDesciption;
 
     // Use this for initialization
     void Start ()
@@ -29,6 +30,7 @@ public class TextManager : MonoBehaviour {
         UpdateStats();
         UpdateAbilityDescription();
 	    UpdateSkillDescription();
+        UpdateItemDescription();
 	}
 
     void UpdateStats()
@@ -53,6 +55,24 @@ public class TextManager : MonoBehaviour {
         if (GetComponent<MenusManager>().skillTree.enabled)
         {
             skillDescription.text = GetComponent<MenusManager>().skillTree.currentItem.GetComponent<Skill>().GetCompleteDescription();
+        }
+    }
+
+    void UpdateItemDescription()
+    {
+        if (GetComponent<MenusManager>().equipmentMenu.enabled)
+        {
+            var item = GetComponent<MenusManager>().equipmentMenu.currentItem.GetComponent<Item>();
+            if (item)
+            {
+                itemDesciption.text = item.getCompleteDesciption();
+            }
+            else
+            {
+                itemDesciption.text = "";
+            }
+
+           
         }
     }
 }
