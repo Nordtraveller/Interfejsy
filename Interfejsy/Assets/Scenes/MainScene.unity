@@ -1569,7 +1569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8196079, g: 0.0627451, b: 0.0627451, a: 1}
+  m_Color: {r: 0.4431373, g: 0.40000004, b: 0.40000004, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1785,10 +1785,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: d33ce3d229654a74ca5b970d8f08be2f, type: 3}
-    m_FontSize: 14
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -2181,6 +2181,7 @@ GameObject:
   m_Component:
   - component: {fileID: 375317976}
   - component: {fileID: 375317977}
+  - component: {fileID: 375317978}
   m_Layer: 0
   m_Name: Skill4
   m_TagString: Untagged
@@ -2200,6 +2201,7 @@ Transform:
   m_Children:
   - {fileID: 1703214758}
   - {fileID: 486432386}
+  - {fileID: 1925390583}
   m_Father: {fileID: 506223241}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2267,6 +2269,19 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &375317978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 375317975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b760610d007f744f9b2e3fbaf8419e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillStats: {fileID: 11400000, guid: 1c76676b921ad8e4ea8f5c1fdb64ee52, type: 2}
+  unlocked: 0
 --- !u!1 &377858690
 GameObject:
   m_ObjectHideFlags: 0
@@ -2452,7 +2467,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8196079, g: 0.0627451, b: 0.0627451, a: 1}
+  m_Color: {r: 0.4431373, g: 0.40000004, b: 0.40000004, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3059,7 +3074,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &506223240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3074,17 +3089,17 @@ MonoBehaviour:
   itemsView:
     data:
     - {fileID: 0}
-    - {fileID: 375317977}
+    - {fileID: 635096686}
     - {fileID: 0}
-    - {fileID: 1159380442}
+    - {fileID: 1956567373}
     - {fileID: 783919345}
     - {fileID: 0}
     - {fileID: 1357468720}
     - {fileID: 0}
     - {fileID: 0}
-    - {fileID: 635096686}
+    - {fileID: 375317977}
     - {fileID: 0}
-    - {fileID: 1956567373}
+    - {fileID: 1159380442}
     rowCount: 3
     colCount: 4
   onMenuClick:
@@ -3103,7 +3118,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  defaultGridPosition: {x: 0, y: 3}
+  defaultGridPosition: {x: 2, y: 3}
   currentItem: {fileID: 0}
 --- !u!224 &506223241
 RectTransform:
@@ -3998,6 +4013,7 @@ GameObject:
   m_Component:
   - component: {fileID: 635096685}
   - component: {fileID: 635096686}
+  - component: {fileID: 635096687}
   m_Layer: 0
   m_Name: Skill5
   m_TagString: Untagged
@@ -4017,7 +4033,7 @@ Transform:
   m_Children:
   - {fileID: 1179121820}
   - {fileID: 847112442}
-  - {fileID: 1925390583}
+  - {fileID: 1240794464}
   m_Father: {fileID: 506223241}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4085,6 +4101,19 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &635096687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 635096684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b760610d007f744f9b2e3fbaf8419e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillStats: {fileID: 11400000, guid: 692c67dc61d6d194b8eec3510c1b2699, type: 2}
+  unlocked: 0
 --- !u!1 &674967884
 GameObject:
   m_ObjectHideFlags: 0
@@ -4820,6 +4849,7 @@ GameObject:
   m_Component:
   - component: {fileID: 783919344}
   - component: {fileID: 783919345}
+  - component: {fileID: 783919346}
   m_Layer: 0
   m_Name: Skill6
   m_TagString: Untagged
@@ -4839,7 +4869,6 @@ Transform:
   m_Children:
   - {fileID: 1061777654}
   - {fileID: 2017367190}
-  - {fileID: 1240794464}
   m_Father: {fileID: 506223241}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4907,6 +4936,19 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &783919346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 783919343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b760610d007f744f9b2e3fbaf8419e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillStats: {fileID: 11400000, guid: 5e9fa76774f520541a0e48f24296a4e0, type: 2}
+  unlocked: 0
 --- !u!1 &793341451
 GameObject:
   m_ObjectHideFlags: 0
@@ -6810,7 +6852,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8207547, g: 0.06581525, b: 0.06581525, a: 1}
+  m_Color: {r: 0.4431373, g: 0.40000004, b: 0.40000004, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -6897,8 +6939,8 @@ MonoBehaviour:
   level: 5
   statPointsSpend: 0
   statPointsToSpend: 3
-  skillPointsSpend: 4
-  skillPointsToSpend: 0
+  skillPointsSpend: 0
+  skillPointsToSpend: 4
   abilities:
   - {fileID: 1911407486}
   - {fileID: 2065845101}
@@ -6921,6 +6963,8 @@ MonoBehaviour:
   - {fileID: 188958201}
   - {fileID: 2091286003}
   - {fileID: 760509343}
+  skills: []
+  unlockedSkills: []
 --- !u!114 &1044539597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6968,6 +7012,11 @@ MonoBehaviour:
   - {fileID: 1676225730}
   - {fileID: 1303504522}
   changeAbilityButton: {fileID: 1014014139}
+  havePointsToSpendBars:
+  - {fileID: 416855690}
+  - {fileID: 1043084295}
+  - {fileID: 253274082}
+  - {fileID: 1462644641}
 --- !u!1 &1061777653
 GameObject:
   m_ObjectHideFlags: 0
@@ -7719,6 +7768,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1159380441}
   - component: {fileID: 1159380442}
+  - component: {fileID: 1159380443}
   m_Layer: 0
   m_Name: Skill1
   m_TagString: Untagged
@@ -7817,6 +7867,19 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1159380443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1159380440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b760610d007f744f9b2e3fbaf8419e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillStats: {fileID: 11400000, guid: 5d6494d189518bf4e8b1b5a1b24dc2a3, type: 2}
+  unlocked: 1
 --- !u!1 &1179121819
 GameObject:
   m_ObjectHideFlags: 0
@@ -8314,12 +8377,12 @@ RectTransform:
   m_Children:
   - {fileID: 810888208}
   - {fileID: 88650141}
-  m_Father: {fileID: 783919344}
+  m_Father: {fileID: 635096685}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -150}
+  m_AnchoredPosition: {x: -150, y: -50}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1248231433
@@ -9222,6 +9285,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1357468719}
   - component: {fileID: 1357468720}
+  - component: {fileID: 1357468721}
   m_Layer: 0
   m_Name: Skill3
   m_TagString: Untagged
@@ -9309,6 +9373,19 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1357468721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1357468718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b760610d007f744f9b2e3fbaf8419e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillStats: {fileID: 11400000, guid: 44d8d7cb7a3a92c4ba5acc9520bfbea5, type: 2}
+  unlocked: 0
 --- !u!1 &1369028320
 GameObject:
   m_ObjectHideFlags: 0
@@ -9938,7 +10015,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8207547, g: 0.06581525, b: 0.06581525, a: 1}
+  m_Color: {r: 0.4431373, g: 0.40000004, b: 0.40000004, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -13590,12 +13667,12 @@ RectTransform:
   m_Children:
   - {fileID: 1810848977}
   - {fileID: 736873569}
-  m_Father: {fileID: 635096685}
+  m_Father: {fileID: 375317976}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -150, y: -50}
+  m_AnchoredPosition: {x: 150, y: -50}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1934345857
@@ -13806,6 +13883,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1956567372}
   - component: {fileID: 1956567373}
+  - component: {fileID: 1956567374}
   m_Layer: 0
   m_Name: Skill2
   m_TagString: Untagged
@@ -13893,6 +13971,19 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1956567374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1956567371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b760610d007f744f9b2e3fbaf8419e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillStats: {fileID: 11400000, guid: 3ef68886735a16d4ea0a91afea089bb5, type: 2}
+  unlocked: 0
 --- !u!1 &1962777642
 GameObject:
   m_ObjectHideFlags: 0

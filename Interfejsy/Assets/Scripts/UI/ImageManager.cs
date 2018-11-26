@@ -17,6 +17,9 @@ public class ImageManager : MonoBehaviour {
     [SerializeField] private Image rbAbility;
     [SerializeField] private Image[] abilityChanging;
     [SerializeField] private Image changeAbilityButton;
+    [SerializeField] private Image[] havePointsToSpendBars;
+
+
 
     // Use this for initialization
     void Start () {
@@ -27,6 +30,25 @@ public class ImageManager : MonoBehaviour {
 	void Update () {
         updateCurrentAbilities();
         ManageChangeAbilityButton();
+	    setColourOfhavePointsToSpendBars();
+	}
+
+    void setColourOfhavePointsToSpendBars()
+    {
+        if (GetComponent<Player>().skillPointsToSpend > 0)
+        {
+            foreach (var bar in havePointsToSpendBars)
+            {
+                bar.GetComponent<Image>().color = Color.red;
+            }
+        }
+        else
+        {
+            foreach (var bar in havePointsToSpendBars)
+            {
+                bar.GetComponent<Image>().color = Color.grey;
+            }
+        }
     }
 
     public void setStatsActivity()

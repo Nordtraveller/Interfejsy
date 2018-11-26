@@ -17,14 +17,14 @@ public class TextManager : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        skillPointsToSpendText.text = "Points: " + GetComponent<Player>().skillPointsToSpend.ToString();
+        skillPointsToSpendText.text = GetComponent<Player>().skillPointsToSpend.ToString();
         abilityDescription.text = "";
         UpdateStats();
     }
 	
 	// Update is called once per frame
 	void Update () {
-	    skillPointsToSpendText.text = "Points: " + GetComponent<Player>().skillPointsToSpend.ToString();
+	    skillPointsToSpendText.text = GetComponent<Player>().skillPointsToSpend.ToString();
         UpdateStats();
         UpdateAbilityDescription();
     }
