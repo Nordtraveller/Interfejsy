@@ -1894,7 +1894,7 @@ GameObject:
   - component: {fileID: 410894138}
   - component: {fileID: 410894137}
   m_Layer: 0
-  m_Name: Image
+  m_Name: RbAbilityImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4911,7 +4911,7 @@ GameObject:
   - component: {fileID: 842894169}
   - component: {fileID: 842894168}
   m_Layer: 0
-  m_Name: Image
+  m_Name: YAbilityImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6310,6 +6310,11 @@ MonoBehaviour:
   addToIntelligence: {fileID: 607169500}
   addToCharisma: {fileID: 823839340}
   lbAbility: {fileID: 1828232100}
+  xAbility: {fileID: 1099206561}
+  aAbility: {fileID: 1153818773}
+  bAbility: {fileID: 1918908781}
+  yAbility: {fileID: 842894168}
+  rbAbility: {fileID: 410894137}
 --- !u!1 &1061777653
 GameObject:
   m_ObjectHideFlags: 0
@@ -6459,7 +6464,7 @@ GameObject:
   - component: {fileID: 1099206562}
   - component: {fileID: 1099206561}
   m_Layer: 0
-  m_Name: Image
+  m_Name: XAbilityImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6849,7 +6854,7 @@ GameObject:
   - component: {fileID: 1153818774}
   - component: {fileID: 1153818773}
   m_Layer: 0
-  m_Name: Image
+  m_Name: AAbilityImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11027,7 +11032,7 @@ GameObject:
   - component: {fileID: 1828232101}
   - component: {fileID: 1828232100}
   m_Layer: 0
-  m_Name: Image
+  m_Name: LBAbilityImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11602,7 +11607,7 @@ GameObject:
   - component: {fileID: 1918908782}
   - component: {fileID: 1918908781}
   m_Layer: 0
-  m_Name: Image
+  m_Name: BAbilityImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

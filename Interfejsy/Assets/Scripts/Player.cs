@@ -52,9 +52,9 @@ public class Player : MonoBehaviour {
     }
 
     void Start () {
-        abilities = new List<Ability>();
+        //abilities = new List<Ability>();
         stats = new int[4];
-        currentAbilities = new Ability[6];
+        //currentAbilities = new Ability[6];
     }
 
 	void Update () {

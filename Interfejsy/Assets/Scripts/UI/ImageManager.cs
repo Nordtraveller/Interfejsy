@@ -10,6 +10,11 @@ public class ImageManager : MonoBehaviour {
     [SerializeField] private Image addToIntelligence;
     [SerializeField] private Image addToCharisma;
     [SerializeField] private Image lbAbility;
+    [SerializeField] private Image xAbility;
+    [SerializeField] private Image aAbility;
+    [SerializeField] private Image bAbility;
+    [SerializeField] private Image yAbility;
+    [SerializeField] private Image rbAbility;
     // Use this for initialization
     void Start () {
         setStatsActivity();
@@ -37,8 +42,12 @@ public class ImageManager : MonoBehaviour {
     {
         if(GetComponent<MenusManager>().abillitiesMenu.enabled)
         {
-            //lbAbility.sprite = GetComponent<Player>().currentAbilities[0].GetComponent<Ability>().abilityStats.icon;
-            //lbAbility.sprite = GetComponent<Player>().currentAbilities[0].abilityStats.icon;
+            lbAbility.sprite = GetComponent<Player>().currentAbilities[0].abilityStats.icon;
+            xAbility.sprite = GetComponent<Player>().currentAbilities[1].abilityStats.icon;
+            aAbility.sprite = GetComponent<Player>().currentAbilities[2].abilityStats.icon;
+            bAbility.sprite = GetComponent<Player>().currentAbilities[3].abilityStats.icon;
+            yAbility.sprite = GetComponent<Player>().currentAbilities[4].abilityStats.icon;
+            rbAbility.sprite = GetComponent<Player>().currentAbilities[5].abilityStats.icon;
         }
     }
 
