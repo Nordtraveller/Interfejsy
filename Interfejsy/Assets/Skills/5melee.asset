@@ -13,4 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: c9c68f744e937ed4aafbc384c347705d, type: 3}
   skillName: 5 melee
-  description: 5 melee
+  description: +5% to weapon damage deal

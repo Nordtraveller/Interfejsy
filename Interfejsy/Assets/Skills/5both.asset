@@ -13,4 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: b276cf153fe4fde46a23a7b0417a8e2a, type: 3}
   skillName: 5 both
-  description: 5 both
+  description: +5% to all damage deal

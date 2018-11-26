@@ -13,4 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: d226865b1129d634ea74963b81b034d0, type: 3}
   skillName: 1 all stats
-  description: 1 all stats
+  description: +1 to all stats (Strenght, Agility, Intelligence, Charisma)

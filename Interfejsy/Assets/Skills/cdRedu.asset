@@ -13,4 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: b0e628495fac21e4a90f34c445640bb0, type: 3}
   skillName: cd redu
-  description: cd redu
+  description: -1 second of cooldowns
