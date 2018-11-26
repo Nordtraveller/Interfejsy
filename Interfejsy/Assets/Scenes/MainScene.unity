@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -992,6 +992,7 @@ GameObject:
   m_Component:
   - component: {fileID: 188958199}
   - component: {fileID: 188958200}
+  - component: {fileID: 188958201}
   m_Layer: 0
   m_Name: B
   m_TagString: Untagged
@@ -1078,6 +1079,18 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &188958201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 188958198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ec72d8c910d2cf49a0c26a1d09682de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityStats: {fileID: 11400000, guid: 3701b15fdf81066409bf9e8b1be74e61, type: 2}
 --- !u!1 &197541310
 GameObject:
   m_ObjectHideFlags: 0
@@ -1924,7 +1937,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 9dc8c7a4e4c7e924795ab009f2f505eb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4024,6 +4037,7 @@ GameObject:
   m_Component:
   - component: {fileID: 760509341}
   - component: {fileID: 760509342}
+  - component: {fileID: 760509343}
   m_Layer: 0
   m_Name: RB
   m_TagString: Untagged
@@ -4110,6 +4124,18 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &760509343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 760509340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ec72d8c910d2cf49a0c26a1d09682de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityStats: {fileID: 11400000, guid: a13f652ecc538a544900c06884d4183d, type: 2}
 --- !u!1 &774049265
 GameObject:
   m_ObjectHideFlags: 0
@@ -4928,7 +4954,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 9dc8c7a4e4c7e924795ab009f2f505eb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6243,6 +6269,13 @@ MonoBehaviour:
   - {fileID: 942462351}
   - {fileID: 1693947702}
   - {fileID: 1520058937}
+  currentAbilities:
+  - {fileID: 1382177446}
+  - {fileID: 1962777645}
+  - {fileID: 1350114454}
+  - {fileID: 188958201}
+  - {fileID: 2091286003}
+  - {fileID: 760509343}
 --- !u!114 &1044539597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6276,6 +6309,7 @@ MonoBehaviour:
   addToAgility: {fileID: 1255374510}
   addToIntelligence: {fileID: 607169500}
   addToCharisma: {fileID: 823839340}
+  lbAbility: {fileID: 1828232100}
 --- !u!1 &1061777653
 GameObject:
   m_ObjectHideFlags: 0
@@ -6468,7 +6502,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 9dc8c7a4e4c7e924795ab009f2f505eb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6858,7 +6892,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 9dc8c7a4e4c7e924795ab009f2f505eb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8137,6 +8171,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1350114452}
   - component: {fileID: 1350114453}
+  - component: {fileID: 1350114454}
   m_Layer: 0
   m_Name: A
   m_TagString: Untagged
@@ -8223,6 +8258,18 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1350114454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1350114451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ec72d8c910d2cf49a0c26a1d09682de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityStats: {fileID: 11400000, guid: e6ef529c8b16fb142b41899ac1efb94f, type: 2}
 --- !u!1 &1357468718
 GameObject:
   m_ObjectHideFlags: 0
@@ -8501,6 +8548,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1382177444}
   - component: {fileID: 1382177445}
+  - component: {fileID: 1382177446}
   m_Layer: 0
   m_Name: LB
   m_TagString: Untagged
@@ -8587,6 +8635,18 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1382177446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1382177443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ec72d8c910d2cf49a0c26a1d09682de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityStats: {fileID: 11400000, guid: 6c7cb44bf4065c449a4c0890bd8b8d66, type: 2}
 --- !u!1 &1386247329
 GameObject:
   m_ObjectHideFlags: 0
@@ -11010,7 +11070,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 9dc8c7a4e4c7e924795ab009f2f505eb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11585,7 +11645,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 9dc8c7a4e4c7e924795ab009f2f505eb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12098,6 +12158,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1962777643}
   - component: {fileID: 1962777644}
+  - component: {fileID: 1962777645}
   m_Layer: 0
   m_Name: X
   m_TagString: Untagged
@@ -12184,6 +12245,18 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1962777645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1962777642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ec72d8c910d2cf49a0c26a1d09682de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityStats: {fileID: 11400000, guid: 42d4f029e9aa09e438b566936b8567cf, type: 2}
 --- !u!1 &1985870168
 GameObject:
   m_ObjectHideFlags: 0
@@ -12829,6 +12902,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2091286001}
   - component: {fileID: 2091286002}
+  - component: {fileID: 2091286003}
   m_Layer: 0
   m_Name: Y
   m_TagString: Untagged
@@ -12915,6 +12989,18 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &2091286003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2091286000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ec72d8c910d2cf49a0c26a1d09682de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityStats: {fileID: 11400000, guid: a311de882ae5cde4d8368a42efea38e0, type: 2}
 --- !u!1 &2110668967
 GameObject:
   m_ObjectHideFlags: 0

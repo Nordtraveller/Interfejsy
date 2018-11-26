@@ -9,6 +9,7 @@ public class ImageManager : MonoBehaviour {
     [SerializeField] private Image addToAgility;
     [SerializeField] private Image addToIntelligence;
     [SerializeField] private Image addToCharisma;
+    [SerializeField] private Image lbAbility;
     // Use this for initialization
     void Start () {
         setStatsActivity();
@@ -16,8 +17,8 @@ public class ImageManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-	}
+        updateCurrentAbilities();
+    }
 
     public void setStatsActivity()
     {
@@ -30,6 +31,15 @@ public class ImageManager : MonoBehaviour {
         addToAgility.GetComponent<Image>().color = color;
         addToIntelligence.GetComponent<Image>().color = color;
         addToCharisma.GetComponent<Image>().color = color;
+    }
+
+    public void updateCurrentAbilities()
+    {
+        if(GetComponent<MenusManager>().abillitiesMenu.enabled)
+        {
+            //lbAbility.sprite = GetComponent<Player>().currentAbilities[0].GetComponent<Ability>().abilityStats.icon;
+            //lbAbility.sprite = GetComponent<Player>().currentAbilities[0].abilityStats.icon;
+        }
     }
 
 }
