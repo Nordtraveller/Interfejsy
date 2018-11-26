@@ -50,8 +50,7 @@ public class Skill : MonoBehaviour {
 
     public string GetCompleteDescription()
     {
-        string result = skillStats.name;
-        result += "\n\n" + skillStats.description;
+        string result = skillStats.description;
         return result;
     }
 }
