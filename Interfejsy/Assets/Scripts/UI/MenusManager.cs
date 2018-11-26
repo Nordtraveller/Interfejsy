@@ -7,7 +7,7 @@ public class MenusManager : MonoBehaviour {
     [SerializeField] private Grid gameplayMenu;
     [SerializeField] private Grid equipmentMenu;
     [SerializeField] public Grid abillitiesMenu;
-    [SerializeField] private Grid skillTree;
+    [SerializeField] public Grid skillTree;
     [SerializeField] private Grid quitMenu;
 
     static MenusManager instance_;
