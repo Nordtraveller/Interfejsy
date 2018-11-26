@@ -8,7 +8,6 @@ public class AbilityStats : ScriptableObject {
     public int manaCost = 0;
     public int coolDown = 0;
     public int damage = 0;
-    public keyBind keyBind = keyBind.None;
     public damageType dmgtype = damageType.None;
     public keyBindType keyBindType = keyBindType.None;
     public string abilityName;

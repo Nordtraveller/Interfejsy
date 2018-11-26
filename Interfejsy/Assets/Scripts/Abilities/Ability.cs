@@ -12,17 +12,6 @@ public enum damageType
     Physical
 }
 
-[System.Serializable]
-public enum keyBind
-{
-    None,
-    LB,
-    RB,
-    X,
-    A,
-    B,
-    Y
-}
 
 [System.Serializable]
 public enum keyBindType
@@ -38,12 +27,13 @@ public class Ability : MonoBehaviour {
     [SerializeField] public AbilityStats abilityStats;
     private int currentCooldown = 0;
     private float lastCdUpdate = 0.0f;
+    private bool changeAbility;
 
 
     // Use this for initialization
     void Start () {
-
-	}
+        changeAbility = false;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -57,11 +47,6 @@ public class Ability : MonoBehaviour {
             }
         }
 	}
-
-    void BindAbility(keyBind key)
-    {
-    //todo
-    }
 
     public void UseAbility()
     {
@@ -96,5 +81,49 @@ public class Ability : MonoBehaviour {
         }
         result += "\n\n" + abilityStats.description;
         return result;
+    }
+
+    public void ActivateChangeAbility()
+    {
+        for (int i = 0; i < 6; i++)
+        {
+            if (GameObject.Find("GameManagers").GetComponent<Player>().currentAbilities[i].changeAbility)
+            {
+                GameObject.Find("GameManagers").GetComponent<Player>().currentAbilities[i].changeAbility = false;
+                break;
+            }
+        }
+        this.changeAbility = true;
+    }
+
+    public void ChangeAbility()
+    {
+        Ability oldAbility = null;
+        Ability alreadyUsed = null;
+        for (int i=0; i<6; i++)
+        {
+            if (GameObject.Find("GameManagers").GetComponent<Player>().currentAbilities[i].abilityStats.name == this.abilityStats.name)
+            {
+                alreadyUsed = GameObject.Find("GameManagers").GetComponent<Player>().currentAbilities[i];
+            }
+            if (GameObject.Find("GameManagers").GetComponent<Player>().currentAbilities[i].changeAbility)
+            {
+                oldAbility = GameObject.Find("GameManagers").GetComponent<Player>().currentAbilities[i];
+            }
+        }
+        if(oldAbility == null)
+        {
+            return;
+        }
+        if(oldAbility.abilityStats.keyBindType != this.abilityStats.keyBindType)
+        {
+            return;
+        }
+        if (alreadyUsed != null)
+        {
+            alreadyUsed.abilityStats = oldAbility.abilityStats;
+        }
+        oldAbility.abilityStats = this.abilityStats;
+        oldAbility.changeAbility = false;
     }
 }
