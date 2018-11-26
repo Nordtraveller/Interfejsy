@@ -6,6 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+  m_Name: UIIconMaterial
   m_Shader: {fileID: 10761, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _MAINNORMALBLENDCHOICE_MAIN_NORMAL _SNOWMASKBLENDSTYLE_ADDITIVE
     _SNOWMASKCHOICE2_MASK_R _SNOWMASKCHOICE_MASK_R _TOPMASKBLENDSTYLE_ADDITIVE _TOPMASKCHOICE2_MASK_R
@@ -60,9 +61,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainBump:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Mask:
@@ -153,6 +156,7 @@ Material:
     - _StencilOp: 0
     - _StencilReadMask: 255
     - _StencilWriteMask: 255
+    - _Strength: 0.2
     - _TopAlbedoBlend: 0.5
     - _TopBlendNormals: 0.5
     - _TopDepth: 0.7
