@@ -60,8 +60,11 @@ public class Player : MonoBehaviour {
 	void Update () {
         SetInput();
 
-
-
+        // Shortcut for quick level-up
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            LevelUp();
+        }
 	}
 
     public void LevelUp()
@@ -69,6 +72,8 @@ public class Player : MonoBehaviour {
         level += 1;
         statPointsToSpend += 3;
         GetComponent<ImageManager>().setStatsActivity();
+
+        Debug.Log("Current level: " + level);
     }
 
     public void AddToStat(int index)
