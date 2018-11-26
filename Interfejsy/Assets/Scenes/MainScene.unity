@@ -2219,8 +2219,8 @@ MonoBehaviour:
   onClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1044539595}
-        m_MethodName: QuitSkillTree
+      - m_Target: {fileID: 375317978}
+        m_MethodName: AddSkill
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2281,6 +2281,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillStats: {fileID: 11400000, guid: 1c76676b921ad8e4ea8f5c1fdb64ee52, type: 2}
+  vizualizationBars:
+  - {fileID: 1810848978}
+  - {fileID: 736873570}
+  skillsNeedToBeUnlocked:
+  - {fileID: 1357468721}
   unlocked: 0
 --- !u!1 &377858690
 GameObject:
@@ -4051,8 +4056,8 @@ MonoBehaviour:
   onClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1044539595}
-        m_MethodName: QuitSkillTree
+      - m_Target: {fileID: 635096687}
+        m_MethodName: AddSkill
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4113,6 +4118,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillStats: {fileID: 11400000, guid: 692c67dc61d6d194b8eec3510c1b2699, type: 2}
+  vizualizationBars:
+  - {fileID: 810888209}
+  - {fileID: 88650142}
+  skillsNeedToBeUnlocked:
+  - {fileID: 1357468721}
   unlocked: 0
 --- !u!1 &674967884
 GameObject:
@@ -4886,8 +4896,8 @@ MonoBehaviour:
   onClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1044539595}
-        m_MethodName: QuitSkillTree
+      - m_Target: {fileID: 783919346}
+        m_MethodName: AddSkill
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4948,6 +4958,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillStats: {fileID: 11400000, guid: 5e9fa76774f520541a0e48f24296a4e0, type: 2}
+  vizualizationBars: []
+  skillsNeedToBeUnlocked:
+  - {fileID: 375317978}
+  - {fileID: 635096687}
   unlocked: 0
 --- !u!1 &793341451
 GameObject:
@@ -6963,7 +6977,13 @@ MonoBehaviour:
   - {fileID: 188958201}
   - {fileID: 2091286003}
   - {fileID: 760509343}
-  skills: []
+  skills:
+  - {fileID: 1159380443}
+  - {fileID: 1956567374}
+  - {fileID: 1357468721}
+  - {fileID: 375317978}
+  - {fileID: 635096687}
+  - {fileID: 783919346}
   unlockedSkills: []
 --- !u!114 &1044539597
 MonoBehaviour:
@@ -7806,23 +7826,12 @@ MonoBehaviour:
   onClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2087583742}
-        m_MethodName: set_material
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 310988006}
-        m_MethodName: 
+      - m_Target: {fileID: 1159380443}
+        m_MethodName: AddSkill
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -7879,7 +7888,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillStats: {fileID: 11400000, guid: 5d6494d189518bf4e8b1b5a1b24dc2a3, type: 2}
-  unlocked: 1
+  vizualizationBars:
+  - {fileID: 2087583742}
+  - {fileID: 310988008}
+  skillsNeedToBeUnlocked: []
+  unlocked: 0
 --- !u!1 &1179121819
 GameObject:
   m_ObjectHideFlags: 0
@@ -9323,8 +9336,8 @@ MonoBehaviour:
   onClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1044539595}
-        m_MethodName: QuitSkillTree
+      - m_Target: {fileID: 1357468721}
+        m_MethodName: AddSkill
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9385,6 +9398,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillStats: {fileID: 11400000, guid: 44d8d7cb7a3a92c4ba5acc9520bfbea5, type: 2}
+  vizualizationBars:
+  - {fileID: 1998095125}
+  - {fileID: 1719683793}
+  - {fileID: 326966286}
+  skillsNeedToBeUnlocked:
+  - {fileID: 1159380443}
+  - {fileID: 1956567374}
   unlocked: 0
 --- !u!1 &1369028320
 GameObject:
@@ -13921,8 +13941,8 @@ MonoBehaviour:
   onClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1044539595}
-        m_MethodName: QuitSkillTree
+      - m_Target: {fileID: 1956567374}
+        m_MethodName: AddSkill
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13983,6 +14003,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillStats: {fileID: 11400000, guid: 3ef68886735a16d4ea0a91afea089bb5, type: 2}
+  vizualizationBars:
+  - {fileID: 65262441}
+  - {fileID: 1741761378}
+  skillsNeedToBeUnlocked: []
   unlocked: 0
 --- !u!1 &1962777642
 GameObject:
