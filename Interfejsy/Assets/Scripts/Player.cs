@@ -25,7 +25,7 @@ public class Player : MonoBehaviour {
     public int statPointsToSpend = 0;
     public int skillPointsSpend = 0;
     public int skillPointsToSpend = 0;
-    public List<Ability> abilities;
+    [SerializeField]public List<Ability> abilities;
     static Player myInstance;
 
     public PlayerInput input{ get { return input_; } }

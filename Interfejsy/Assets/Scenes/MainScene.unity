@@ -122,6 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5096719}
   - component: {fileID: 5096720}
+  - component: {fileID: 5096721}
   m_Layer: 0
   m_Name: Heal
   m_TagString: Untagged
@@ -208,6 +209,18 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &5096721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 5096718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ec72d8c910d2cf49a0c26a1d09682de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityStats: {fileID: 11400000, guid: 5480ede64ecacd9418cbe31eeaf63138, type: 2}
 --- !u!1 &5133201
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,6 +230,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5133202}
   - component: {fileID: 5133203}
+  - component: {fileID: 5133204}
   m_Layer: 0
   m_Name: Parry
   m_TagString: Untagged
@@ -303,6 +317,18 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &5133204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 5133201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ec72d8c910d2cf49a0c26a1d09682de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityStats: {fileID: 11400000, guid: db712145d350e79439a73ca82c433463, type: 2}
 --- !u!1 &35057797
 GameObject:
   m_ObjectHideFlags: 0
@@ -5366,6 +5392,7 @@ GameObject:
   m_Component:
   - component: {fileID: 869095853}
   - component: {fileID: 869095854}
+  - component: {fileID: 869095855}
   m_Layer: 0
   m_Name: Dash
   m_TagString: Untagged
@@ -5452,6 +5479,18 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &869095855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 869095852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ec72d8c910d2cf49a0c26a1d09682de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityStats: {fileID: 11400000, guid: 42d4f029e9aa09e438b566936b8567cf, type: 2}
 --- !u!1 &869408058
 GameObject:
   m_ObjectHideFlags: 0
@@ -6046,6 +6085,7 @@ GameObject:
   m_Component:
   - component: {fileID: 942462349}
   - component: {fileID: 942462350}
+  - component: {fileID: 942462351}
   m_Layer: 0
   m_Name: Icebolt
   m_TagString: Untagged
@@ -6132,6 +6172,18 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &942462351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 942462348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ec72d8c910d2cf49a0c26a1d09682de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityStats: {fileID: 11400000, guid: 754ea6895fb6c8b42936c8b49c838342, type: 2}
 --- !u!1 &966725669
 GameObject:
   m_ObjectHideFlags: 0
@@ -6478,7 +6530,21 @@ MonoBehaviour:
   statPointsToSpend: 3
   skillPointsSpend: 4
   skillPointsToSpend: 0
-  abilities: []
+  abilities:
+  - {fileID: 1911407486}
+  - {fileID: 2065845101}
+  - {fileID: 1270085173}
+  - {fileID: 1534433459}
+  - {fileID: 1653070239}
+  - {fileID: 5133204}
+  - {fileID: 869095855}
+  - {fileID: 1785839318}
+  - {fileID: 2037307126}
+  - {fileID: 1693947702}
+  - {fileID: 5096721}
+  - {fileID: 942462351}
+  - {fileID: 1693947702}
+  - {fileID: 1520058937}
 --- !u!114 &1044539597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8153,6 +8219,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1270085171}
   - component: {fileID: 1270085172}
+  - component: {fileID: 1270085173}
   m_Layer: 0
   m_Name: ThrustAttack
   m_TagString: Untagged
@@ -8239,6 +8306,18 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1270085173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1270085170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ec72d8c910d2cf49a0c26a1d09682de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityStats: {fileID: 11400000, guid: ff93e2481b133e14891927d53cbcf65a, type: 2}
 --- !u!1 &1284125899
 GameObject:
   m_ObjectHideFlags: 0
@@ -9314,6 +9393,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1520058935}
   - component: {fileID: 1520058936}
+  - component: {fileID: 1520058937}
   m_Layer: 0
   m_Name: Swing
   m_TagString: Untagged
@@ -9400,6 +9480,18 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1520058937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1520058934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ec72d8c910d2cf49a0c26a1d09682de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityStats: {fileID: 11400000, guid: a2b56509db4fed248a96cf1053a1640e, type: 2}
 --- !u!1 &1534433456
 GameObject:
   m_ObjectHideFlags: 0
@@ -9409,6 +9501,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1534433457}
   - component: {fileID: 1534433458}
+  - component: {fileID: 1534433459}
   m_Layer: 0
   m_Name: Block
   m_TagString: Untagged
@@ -9495,6 +9588,18 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1534433459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1534433456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ec72d8c910d2cf49a0c26a1d09682de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityStats: {fileID: 11400000, guid: a13f652ecc538a544900c06884d4183d, type: 2}
 --- !u!1 &1546217881
 GameObject:
   m_ObjectHideFlags: 0
@@ -10106,6 +10211,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1653070237}
   - component: {fileID: 1653070238}
+  - component: {fileID: 1653070239}
   m_Layer: 0
   m_Name: MagicBlock
   m_TagString: Untagged
@@ -10192,6 +10298,18 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1653070239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1653070236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ec72d8c910d2cf49a0c26a1d09682de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityStats: {fileID: 11400000, guid: 9ec571fbb39fd69439f816a4a9a1aac3, type: 2}
 --- !u!1 &1659578220
 GameObject:
   m_ObjectHideFlags: 0
@@ -10409,6 +10527,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1693947700}
   - component: {fileID: 1693947701}
+  - component: {fileID: 1693947702}
   m_Layer: 0
   m_Name: SummonWolf
   m_TagString: Untagged
@@ -10495,6 +10614,18 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1693947702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1693947699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ec72d8c910d2cf49a0c26a1d09682de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityStats: {fileID: 11400000, guid: e83bef846b978094586fad6367f2f035, type: 2}
 --- !u!1 &1696084439
 GameObject:
   m_ObjectHideFlags: 0
@@ -10648,6 +10779,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1715762201}
   - component: {fileID: 1715762202}
+  - component: {fileID: 1715762203}
   m_Layer: 0
   m_Name: Freeze
   m_TagString: Untagged
@@ -10734,6 +10866,18 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1715762203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1715762200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ec72d8c910d2cf49a0c26a1d09682de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityStats: {fileID: 11400000, guid: a311de882ae5cde4d8368a42efea38e0, type: 2}
 --- !u!1 &1719683791
 GameObject:
   m_ObjectHideFlags: 0
@@ -11025,6 +11169,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1785839316}
   - component: {fileID: 1785839317}
+  - component: {fileID: 1785839318}
   m_Layer: 0
   m_Name: Fireball
   m_TagString: Untagged
@@ -11111,6 +11256,18 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1785839318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1785839315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ec72d8c910d2cf49a0c26a1d09682de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityStats: {fileID: 11400000, guid: e6ef529c8b16fb142b41899ac1efb94f, type: 2}
 --- !u!1 &1786160136
 GameObject:
   m_ObjectHideFlags: 0
@@ -11725,6 +11882,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1911407484}
   - component: {fileID: 1911407485}
+  - component: {fileID: 1911407486}
   m_Layer: 0
   m_Name: FastAttack
   m_TagString: Untagged
@@ -11811,6 +11969,18 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1911407486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1911407483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ec72d8c910d2cf49a0c26a1d09682de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityStats: {fileID: 11400000, guid: 6c7cb44bf4065c449a4c0890bd8b8d66, type: 2}
 --- !u!1 &1918908779
 GameObject:
   m_ObjectHideFlags: 0
@@ -12824,6 +12994,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2037307124}
   - component: {fileID: 2037307125}
+  - component: {fileID: 2037307126}
   m_Layer: 0
   m_Name: Flamefield
   m_TagString: Untagged
@@ -12910,6 +13081,18 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &2037307126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2037307123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ec72d8c910d2cf49a0c26a1d09682de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityStats: {fileID: 11400000, guid: 3701b15fdf81066409bf9e8b1be74e61, type: 2}
 --- !u!1 &2065845098
 GameObject:
   m_ObjectHideFlags: 0
@@ -12919,6 +13102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2065845099}
   - component: {fileID: 2065845100}
+  - component: {fileID: 2065845101}
   m_Layer: 0
   m_Name: StrongAttack
   m_TagString: Untagged
@@ -13005,6 +13189,18 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &2065845101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2065845098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ec72d8c910d2cf49a0c26a1d09682de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityStats: {fileID: 11400000, guid: 1ea1313dd7cd05c49a812879998b7d42, type: 2}
 --- !u!1 &2087583740
 GameObject:
   m_ObjectHideFlags: 0

@@ -33,23 +33,16 @@ public enum keyBindType
     XABY
 }
 
-public abstract class Ability : MonoBehaviour {
+public class Ability : MonoBehaviour {
 
-    public int manaCost = 0;
-    public int coolDown = 0;
-    public int currentCooldown = 0;
-    public int damage = 0;
-    public keyBind keyBind = keyBind.None;
-    public damageType dmgtype = damageType.None;
-    public keyBindType keyBindType = keyBindType.None;
-    string abilityName;
-    string description;
+    [SerializeField] public AbilityStats abilityStats;
+    private int currentCooldown = 0;
     private float lastCdUpdate = 0.0f;
 
 
     // Use this for initialization
     void Start () {
-        Player.Instance.abilities.Add(this);
+
 	}
 	
 	// Update is called once per frame
@@ -67,21 +60,14 @@ public abstract class Ability : MonoBehaviour {
 
     void BindAbility(keyBind key)
     {
-        foreach ( var ability in Player.Instance.abilities)
-        {
-            if(ability.keyBind == key)
-            {
-                ability.keyBind = keyBind.None;
-            }
-        }
-        this.keyBind = key;
+    //todo
     }
 
     public void UseAbility()
     {
         if(currentCooldown == 0)
         {
-            currentCooldown = coolDown;
+            currentCooldown = abilityStats.coolDown;
         }    
     }
 }
