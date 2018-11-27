@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ImageManager : MonoBehaviour {
+public class ImageManager : MonoBehaviour
+{
 
     [SerializeField] private Image addToStrenght;
     [SerializeField] private Image addToAgility;
@@ -17,26 +18,30 @@ public class ImageManager : MonoBehaviour {
     [SerializeField] private Image rbAbility;
     [SerializeField] private Image[] abilityChanging;
     [SerializeField] private Image changeAbilityButton;
+    [SerializeField] private Image addingSkillButton;
     [SerializeField] private Image[] havePointsToSpendBars;
 
     [SerializeField] private Image currentHead;
     [SerializeField] private Image currentSword;
     [SerializeField] private Image currentArmor;
     [SerializeField] private Image currentShield;
+
     [SerializeField] private Image[] itemsChanging;
     //[SerializeField] private Image change
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         setStatsActivity();
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         updateCurrentAbilities();
         ManageChangeAbilityButton();
-	    setColourOfhavePointsToSpendBars();
-
+        setColourOfhavePointsToSpendBars();
+        ManageAddSKillButton();
         updateCurrentItems();
     }
 
@@ -65,6 +70,7 @@ public class ImageManager : MonoBehaviour {
         {
             color = Color.gray;
         }
+
         addToStrenght.GetComponent<Image>().color = color;
         addToAgility.GetComponent<Image>().color = color;
         addToIntelligence.GetComponent<Image>().color = color;
@@ -80,10 +86,10 @@ public class ImageManager : MonoBehaviour {
             currentArmor.sprite = GetComponent<Player>().currentItems[2].itemStats.icon;
             currentShield.sprite = GetComponent<Player>().currentItems[3].itemStats.icon;
 
-            for (int i=0; i < 4; ++i)
+            for (int i = 0; i < 4; ++i)
             {
                 if (GetComponent<Player>().currentItems[i].changeItem)
-                     itemsChanging[i].gameObject.SetActive(true);
+                    itemsChanging[i].gameObject.SetActive(true);
                 else
                     itemsChanging[i].gameObject.SetActive(false);
             }
@@ -92,7 +98,7 @@ public class ImageManager : MonoBehaviour {
 
     public void updateCurrentAbilities()
     {
-        if(GetComponent<MenusManager>().abillitiesMenu.enabled)
+        if (GetComponent<MenusManager>().abillitiesMenu.enabled)
         {
             lbAbility.sprite = GetComponent<Player>().currentAbilities[0].abilityStats.icon;
             xAbility.sprite = GetComponent<Player>().currentAbilities[1].abilityStats.icon;
@@ -100,12 +106,13 @@ public class ImageManager : MonoBehaviour {
             bAbility.sprite = GetComponent<Player>().currentAbilities[3].abilityStats.icon;
             yAbility.sprite = GetComponent<Player>().currentAbilities[4].abilityStats.icon;
             rbAbility.sprite = GetComponent<Player>().currentAbilities[5].abilityStats.icon;
-            for(int i=0; i<6; i++)
+            for (int i = 0; i < 6; i++)
             {
                 if (GetComponent<Player>().currentAbilities[i].changeAbility)
                 {
                     abilityChanging[i].gameObject.SetActive(true);
-                } else
+                }
+                else
                 {
                     abilityChanging[i].gameObject.SetActive(false);
                 }
@@ -117,25 +124,41 @@ public class ImageManager : MonoBehaviour {
     {
         if (GetComponent<MenusManager>().abillitiesMenu.enabled)
         {
-            for(int i=0; i<6; i++)
+            for (int i = 0; i < 6; i++)
             {
                 if (GetComponent<MenusManager>().abillitiesMenu.currentItem.GetComponent<Ability>() ==
-                    GetComponent<Player>().currentAbilities[i]) 
+                    GetComponent<Player>().currentAbilities[i])
                 {
                     changeAbilityButton.gameObject.SetActive(true);
                     return;
                 }
-                if (GetComponent<Player>().currentAbilities[i].changeAbility && 
-                    (GetComponent<MenusManager>().abillitiesMenu.currentItem.GetComponent<Ability>().abilityStats.keyBindType
-                    == GetComponent<Player>().currentAbilities[i].abilityStats.keyBindType))
+
+                if (GetComponent<Player>().currentAbilities[i].changeAbility &&
+                    (GetComponent<MenusManager>().abillitiesMenu.currentItem.GetComponent<Ability>().abilityStats
+                         .keyBindType
+                     == GetComponent<Player>().currentAbilities[i].abilityStats.keyBindType))
                 {
                     changeAbilityButton.gameObject.SetActive(true);
                     return;
                 }
             }
+
             changeAbilityButton.gameObject.SetActive(false);
 
         }
     }
 
+
+    void ManageAddSKillButton()
+    {
+        if (GetComponent<MenusManager>().skillTree.enabled)
+        {
+            if (GetComponent<MenusManager>().skillTree.currentItem.GetComponent<Skill>().CheckIfUnlockAble())
+            {
+                addingSkillButton.gameObject.SetActive(true);
+                return;
+            }
+        }
+        addingSkillButton.gameObject.SetActive(false);
+    }
 }

@@ -14,12 +14,31 @@ public class Skill : MonoBehaviour {
 
     public void AddSkill()
     {
+        if (CheckIfUnlockAble())
+        {
+            unlocked = true;
+            GameObject.Find("GameManagers").GetComponent<Player>().skillPointsToSpend--;
+            GameObject.Find("GameManagers").GetComponent<Player>().unlockedSkills.Add(this);
+            if (vizualizationBars.Length > 0)
+            {
+                foreach (var bar in vizualizationBars)
+                {
+                    bar.GetComponent<Image>().color = Color.red;
+                }
+            }
+        }
+    }
+
+    public bool CheckIfUnlockAble()
+    {
+        bool unlockAble = false;
         if (!unlocked && GameObject.Find("GameManagers").GetComponent<Player>().skillPointsToSpend > 0)
         {
-            bool unlockAble = false;
+            
             if (skillsNeedToBeUnlocked.Length == 0)
             {
                 unlockAble = true;
+                return unlockAble;
             }
             else
             {
@@ -28,24 +47,13 @@ public class Skill : MonoBehaviour {
                     if (skill.unlocked)
                     {
                         unlockAble = true;
-                    }
-                }
-            }
-
-            if (unlockAble)
-            {
-                unlocked = true;
-                GameObject.Find("GameManagers").GetComponent<Player>().skillPointsToSpend--;
-                GameObject.Find("GameManagers").GetComponent<Player>().unlockedSkills.Add(this);
-                if (vizualizationBars.Length > 0)
-                {
-                    foreach (var bar in vizualizationBars)
-                    {
-                        bar.GetComponent<Image>().color = Color.red;
+                        return unlockAble;
                     }
                 }
             }
         }
+
+        return unlockAble;
     }
 
     public string GetCompleteDescription()
