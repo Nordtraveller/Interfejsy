@@ -68,7 +68,32 @@ public class Player : MonoBehaviour {
 	void Update () {
         SetInput();
 
-        Debug.Log("Current mana: " + mana);
+        if (input_.LB)
+        {
+            GameObject.Find("GameManagers").GetComponent<Player>().currentAbilities[0].UseAbility();
+        }
+        if (input_.X)
+        {
+            GameObject.Find("GameManagers").GetComponent<Player>().currentAbilities[1].UseAbility();
+        }
+        if (input_.A)
+        {
+            GameObject.Find("GameManagers").GetComponent<Player>().currentAbilities[2].UseAbility();
+        }
+        if (input_.B)
+        {
+            GameObject.Find("GameManagers").GetComponent<Player>().currentAbilities[3].UseAbility();
+        }
+        if (input_.Y)
+        {
+            GameObject.Find("GameManagers").GetComponent<Player>().currentAbilities[4].UseAbility();
+        }
+        if (input_.RB)
+        {
+            GameObject.Find("GameManagers").GetComponent<Player>().currentAbilities[5].UseAbility();
+        }
+
+       // Debug.Log("Current mana: " + mana);
     }
 
     public void LevelUp()
@@ -125,7 +150,7 @@ public class Player : MonoBehaviour {
         input_.Y = Input.GetButtonDown("Y");
         input_.A = Input.GetButtonDown("A");
         input_.B = Input.GetButtonDown("B");
-        input_.LB = Input.GetButtonDown("LB");
+        input_.LB = Input.GetButtonDown("LB");  
         input_.RB = Input.GetButtonDown("RB");
         input_.menu = Input.GetButtonDown("Menu");
     }

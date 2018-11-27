@@ -50,7 +50,14 @@ public class Ability : MonoBehaviour {
 
     public void UseAbility()
     {
-        if(currentCooldown == 0)
+        float playerMana = GameObject.Find("GameManagers").GetComponent<Player>().mana;
+
+        if (playerMana >= abilityStats.manaCost)
+        {
+            GameObject.Find("GameManagers").GetComponent<Player>().mana -= abilityStats.manaCost;
+        }      
+
+        if (currentCooldown == 0)
         {
             currentCooldown = abilityStats.coolDown;
         }    
