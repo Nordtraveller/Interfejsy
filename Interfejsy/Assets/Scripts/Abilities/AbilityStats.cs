@@ -6,7 +6,7 @@ using UnityEngine;
 public class AbilityStats : ScriptableObject {
     public Sprite icon;
     public int manaCost = 0;
-    public int coolDown = 0;
+    public float coolDown = 0;
     public int damage = 0;
     public damageType dmgtype = damageType.None;
     public keyBindType keyBindType = keyBindType.None;

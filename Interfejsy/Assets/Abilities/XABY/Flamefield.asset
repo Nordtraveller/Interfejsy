@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Name: Flamefield
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 6f92e5e91f103be47bffdda736f779b6, type: 3}
-  manaCost: 130
+  manaCost: 30
   coolDown: 12
   damage: 20
-  keyBind: 5
   dmgtype: 1
   keyBindType: 3
   abilityName: Flamefield

@@ -20,6 +20,7 @@ public class ImageManager : MonoBehaviour
     [SerializeField] private Image changeAbilityButton;
     [SerializeField] private Image addingSkillButton;
     [SerializeField] private Image[] havePointsToSpendBars;
+    [SerializeField] private Image[] cdreduImages;
 
     [SerializeField] private Image currentHead;
     [SerializeField] private Image currentSword;
@@ -43,6 +44,7 @@ public class ImageManager : MonoBehaviour
         setColourOfhavePointsToSpendBars();
         ManageAddSKillButton();
         updateCurrentItems();
+        ManageCdRedu();
     }
 
     void setColourOfhavePointsToSpendBars()
@@ -168,5 +170,19 @@ public class ImageManager : MonoBehaviour
             }
         }
         addingSkillButton.gameObject.SetActive(false);
+    }
+
+    public void ManageCdRedu()
+    {
+        for(int i=0; i<6; i++)
+        {
+            if (GameObject.Find("GameManagers").GetComponent<Player>().currentAbilities[i].currentCooldown > 0.0f)
+            {
+                cdreduImages[i].gameObject.SetActive(true);
+            }else
+            {
+                cdreduImages[i].gameObject.SetActive(false);
+            }
+        }
     }
 }

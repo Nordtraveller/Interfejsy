@@ -25,7 +25,7 @@ public enum keyBindType
 public class Ability : MonoBehaviour {
 
     [SerializeField] public AbilityStats abilityStats;
-    private int currentCooldown = 0;
+    public float currentCooldown = 0;
     private float lastCdUpdate = 0.0f;
     public bool changeAbility;
 
@@ -36,15 +36,17 @@ public class Ability : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
+	public void Update () {
         if(currentCooldown > 0)
         {
-            lastCdUpdate += Time.deltaTime;
+            currentCooldown -= Time.deltaTime;
+            //Debug.Log(currentCooldown);
+            /*lastCdUpdate += Time.deltaTime;
             if (lastCdUpdate >= 1.0f)
             {
                 lastCdUpdate = 0f;
                 currentCooldown -= 1;
-            }
+            }*/
         }
 	}
 
@@ -52,15 +54,22 @@ public class Ability : MonoBehaviour {
     {
         float playerMana = GameObject.Find("GameManagers").GetComponent<Player>().mana;
 
-        if (playerMana >= abilityStats.manaCost)
+        if (playerMana >= abilityStats.manaCost && currentCooldown <= 0)
         {
             GameObject.Find("GameManagers").GetComponent<Player>().mana -= abilityStats.manaCost;
-        }      
-
-        if (currentCooldown == 0)
-        {
             currentCooldown = abilityStats.coolDown;
-        }    
+            if(abilityStats.dmgtype == damageType.Heal)
+            {
+                if (GameObject.Find("GameManagers").GetComponent<Player>().hp + abilityStats.damage <= 100)
+                {
+                    GameObject.Find("GameManagers").GetComponent<Player>().hp += abilityStats.damage;
+                }
+                else
+                {
+                    GameObject.Find("GameManagers").GetComponent<Player>().hp = 100;
+                }
+            }
+        }      
     }
 
     public string GetCompleteDescription()

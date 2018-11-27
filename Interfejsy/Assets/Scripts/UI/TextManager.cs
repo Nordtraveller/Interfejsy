@@ -15,6 +15,8 @@ public class TextManager : MonoBehaviour {
     [SerializeField] private Text abilityDescription;
     [SerializeField] private Text skillDescription;
     [SerializeField] private Text itemDesciption;
+    [SerializeField] private Text dmgDone;
+    [SerializeField] private Text[] cdredu;
 
     // Use this for initialization
     void Start ()
@@ -22,6 +24,7 @@ public class TextManager : MonoBehaviour {
         skillPointsToSpendText.text = GetComponent<Player>().skillPointsToSpend.ToString();
         abilityDescription.text = "";
         UpdateStats();
+        DoDmg();
     }
 	
 	// Update is called once per frame
@@ -31,7 +34,10 @@ public class TextManager : MonoBehaviour {
         UpdateAbilityDescription();
 	    UpdateSkillDescription();
         UpdateItemDescription();
-	}
+        ManageCdRedu();
+        DoDmg();
+
+    }
 
     void UpdateStats()
     {
@@ -73,6 +79,40 @@ public class TextManager : MonoBehaviour {
             }
 
            
+        }
+    }
+
+    public void ManageCdRedu()
+    {
+        for (int i = 0; i < 6; i++)
+        {
+            if (GameObject.Find("GameManagers").GetComponent<Player>().currentAbilities[i].currentCooldown > 0.0f)
+            {
+                cdredu[i].text = Mathf.Round(GameObject.Find("GameManagers").GetComponent<Player>().currentAbilities[i].currentCooldown +1).ToString();
+            }
+        }
+    }
+
+    public void DoDmg()
+    {
+        for (int i = 0; i < 6; i++)
+        {
+            if (GameObject.Find("GameManagers").GetComponent<Player>().currentAbilities[i].currentCooldown > 0.0f)
+            {
+                if(GameObject.Find("GameManagers").GetComponent<Player>().currentAbilities[i].abilityStats.dmgtype == damageType.Ice)
+                {
+                    dmgDone.text = "-" + GameObject.Find("GameManagers").GetComponent<Player>().currentAbilities[i].abilityStats.damage;
+                    Debug.Log("pies");
+                }
+                else
+                {
+                    dmgDone.text = "-0";
+                 }
+            }
+            else
+            {
+               // dmgDone.text = "";
+            }
         }
     }
 }

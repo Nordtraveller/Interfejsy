@@ -67,32 +67,38 @@ public class Player : MonoBehaviour {
 
 	void Update () {
         SetInput();
-
-        if (input_.LB)
+        foreach(Ability abi in GameObject.Find("GameManagers").GetComponent<Player>().currentAbilities)
         {
-            GameObject.Find("GameManagers").GetComponent<Player>().currentAbilities[0].UseAbility();
-        }
-        if (input_.X)
-        {
-            GameObject.Find("GameManagers").GetComponent<Player>().currentAbilities[1].UseAbility();
-        }
-        if (input_.A)
-        {
-            GameObject.Find("GameManagers").GetComponent<Player>().currentAbilities[2].UseAbility();
-        }
-        if (input_.B)
-        {
-            GameObject.Find("GameManagers").GetComponent<Player>().currentAbilities[3].UseAbility();
-        }
-        if (input_.Y)
-        {
-            GameObject.Find("GameManagers").GetComponent<Player>().currentAbilities[4].UseAbility();
-        }
-        if (input_.RB)
-        {
-            GameObject.Find("GameManagers").GetComponent<Player>().currentAbilities[5].UseAbility();
+            abi.Update();
         }
 
+        if (GameObject.Find("GameManagers").GetComponent<MenusManager>().areDisabled())
+        {
+            if (input_.LB)
+            {
+                GameObject.Find("GameManagers").GetComponent<Player>().currentAbilities[0].UseAbility();
+            }
+            if (input_.X)
+            {
+                GameObject.Find("GameManagers").GetComponent<Player>().currentAbilities[1].UseAbility();
+            }
+            if (input_.A)
+            {
+                GameObject.Find("GameManagers").GetComponent<Player>().currentAbilities[2].UseAbility();
+            }
+            if (input_.B)
+            {
+                GameObject.Find("GameManagers").GetComponent<Player>().currentAbilities[3].UseAbility();
+            }
+            if (input_.Y)
+            {
+                GameObject.Find("GameManagers").GetComponent<Player>().currentAbilities[4].UseAbility();
+            }
+            if (input_.RB)
+            {
+                GameObject.Find("GameManagers").GetComponent<Player>().currentAbilities[5].UseAbility();
+            }
+        }
        // Debug.Log("Current mana: " + mana);
     }
 

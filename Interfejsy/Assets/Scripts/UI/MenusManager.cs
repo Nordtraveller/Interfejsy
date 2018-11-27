@@ -10,6 +10,11 @@ public class MenusManager : MonoBehaviour {
     [SerializeField] public Grid skillTree;
     [SerializeField] private Grid quitMenu;
 
+    public bool areDisabled()
+    {
+        return (!equipmentMenu.enabled && !abillitiesMenu.enabled && !skillTree.enabled && !quitMenu.enabled && !gameplayMenu.enabled);
+    }
+
     static MenusManager instance_;
     public static MenusManager instance {
         get {

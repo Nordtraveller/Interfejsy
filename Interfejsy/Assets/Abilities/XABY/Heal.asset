@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Name: Heal
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 3fa7768463084fa4cb88adc60fca46f4, type: 3}
-  manaCost: 60
-  coolDown: 16
-  damage: 40
-  keyBind: 0
+  manaCost: 50
+  coolDown: 4
+  damage: 20
   dmgtype: 3
   keyBindType: 3
   abilityName: Heal

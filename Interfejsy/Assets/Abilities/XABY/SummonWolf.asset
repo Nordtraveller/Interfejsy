@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Name: SummonWolf
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 635725b657b64674b86ee5d9fb293547, type: 3}
-  manaCost: 150
+  manaCost: 100
   coolDown: 20
   damage: 30
-  keyBind: 0
   dmgtype: 4
   keyBindType: 3
   abilityName: Summon Wolf
