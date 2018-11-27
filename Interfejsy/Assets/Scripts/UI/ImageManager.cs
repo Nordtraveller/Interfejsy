@@ -118,6 +118,14 @@ public class ImageManager : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            for (int i = 0; i < 6; i++)
+            {
+                abilityChanging[i].gameObject.SetActive(false);
+                GetComponent<Player>().currentAbilities[i].changeAbility = false;
+            }
+        }
     }
 
     void ManageChangeAbilityButton()
