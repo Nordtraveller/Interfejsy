@@ -19,7 +19,12 @@ public class ImageManager : MonoBehaviour {
     [SerializeField] private Image changeAbilityButton;
     [SerializeField] private Image[] havePointsToSpendBars;
 
-
+    [SerializeField] private Image currentHead;
+    [SerializeField] private Image currentSword;
+    [SerializeField] private Image currentArmor;
+    [SerializeField] private Image currentShield;
+    [SerializeField] private Image[] itemsChanging;
+    //[SerializeField] private Image change
 
     // Use this for initialization
     void Start () {
@@ -31,7 +36,9 @@ public class ImageManager : MonoBehaviour {
         updateCurrentAbilities();
         ManageChangeAbilityButton();
 	    setColourOfhavePointsToSpendBars();
-	}
+
+        updateCurrentItems();
+    }
 
     void setColourOfhavePointsToSpendBars()
     {
@@ -62,6 +69,25 @@ public class ImageManager : MonoBehaviour {
         addToAgility.GetComponent<Image>().color = color;
         addToIntelligence.GetComponent<Image>().color = color;
         addToCharisma.GetComponent<Image>().color = color;
+    }
+
+    public void updateCurrentItems()
+    {
+        if (GetComponent<MenusManager>().equipmentMenu.enabled)
+        {
+            currentHead.sprite = GetComponent<Player>().currentItems[0].itemStats.icon;
+            currentSword.sprite = GetComponent<Player>().currentItems[1].itemStats.icon;
+            currentArmor.sprite = GetComponent<Player>().currentItems[2].itemStats.icon;
+            currentShield.sprite = GetComponent<Player>().currentItems[3].itemStats.icon;
+
+            for (int i=0; i < 4; ++i)
+            {
+                if (GetComponent<Player>().currentItems[i].changeItem)
+                     itemsChanging[i].gameObject.SetActive(true);
+                else
+                    itemsChanging[i].gameObject.SetActive(false);
+            }
+        }
     }
 
     public void updateCurrentAbilities()

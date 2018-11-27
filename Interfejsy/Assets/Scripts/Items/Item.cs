@@ -43,12 +43,18 @@ public class Item : MonoBehaviour {
 
             if (p)
             {
-                p = false;
+                GameObject.Find("GameManagers").GetComponent<Player>().currentItems[i].changeItem = false;
                 break;
             }
         }
 
         this.changeItem = true;
+
+        for (int i = 0; i < 6; i++)
+        {
+            bool b = this.itemStats.type == GameObject.Find("GameManagers").GetComponent<Player>().allItems[i].itemStats.type;
+            GameObject.Find("GameManagers").GetComponent<Player>().allItems[i].gameObject.SetActive(b);
+        }
     }
 
     public void ChangeItem()
@@ -58,7 +64,7 @@ public class Item : MonoBehaviour {
 
         for (int i=0; i < 4; i++)
         {
-            if ( GameObject.Find("GameManagers").GetComponent<Player>().currentItems[i].name == this.name)
+            if ( GameObject.Find("GameManagers").GetComponent<Player>().currentItems[i].itemStats.itemName == this.name)
             {
                 alreadyUsed = GameObject.Find("GameManagers").GetComponent<Player>().currentItems[i];
             }
@@ -86,6 +92,16 @@ public class Item : MonoBehaviour {
 
         oldItem.itemStats = itemStats;
         oldItem.changeItem = false;
+
+        for (int i = 0; i < 6; i++)
+        {           
+            GameObject.Find("GameManagers").GetComponent<Player>().allItems[i].gameObject.SetActive(false);
+        }
+
+        if (oldItem.itemStats.type == itemType.Sword)
+        {
+            GameObject.Find("EquimpentMenu").GetComponent<Grid>().currentItem = GameObject.Find("CurrentSwordItem").GetComponent<GridItem>();
+        }
     }
 
     public string getCompleteDesciption()
