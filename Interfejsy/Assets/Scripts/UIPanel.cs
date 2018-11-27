@@ -13,6 +13,9 @@ public class UIPanel : MonoBehaviour
     [SerializeField] private Image yAbility;
     [SerializeField] private Image rbAbility;
 
+    [SerializeField] private Slider sliderHp;
+    [SerializeField] private Slider sliderMana;
+
     // Use this for initialization
     void Start()
     {
@@ -22,7 +25,6 @@ public class UIPanel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         var player = GameObject.Find("GameManagers").GetComponent<Player>();
 
         if (player)
@@ -33,6 +35,9 @@ public class UIPanel : MonoBehaviour
             bAbility.sprite = player.currentAbilities[3].abilityStats.icon;
             yAbility.sprite = player.currentAbilities[4].abilityStats.icon;
             rbAbility.sprite = player.currentAbilities[5].abilityStats.icon;
+
+            sliderHp.value = (float)player.hp;
+            sliderMana.value = (float)player.mana;
         }
     }
 };
