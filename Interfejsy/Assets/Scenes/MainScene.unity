@@ -15920,7 +15920,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1576136333
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19225,8 +19225,8 @@ MonoBehaviour:
   bAbility: {fileID: 469008749}
   yAbility: {fileID: 234553964}
   rbAbility: {fileID: 406895703}
-  sliderHp: {fileID: 0}
-  sliderMana: {fileID: 0}
+  sliderHp: {fileID: 1260615145}
+  sliderMana: {fileID: 610765082}
 --- !u!222 &1921188569
 CanvasRenderer:
   m_ObjectHideFlags: 0
