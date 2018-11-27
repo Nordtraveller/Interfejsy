@@ -68,12 +68,8 @@ public class Player : MonoBehaviour {
 	void Update () {
         SetInput();
 
-        // Shortcut for quick level-up
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            LevelUp();
-        }
-	}
+        Debug.Log("Current mana: " + mana);
+    }
 
     public void LevelUp()
     {

@@ -36,6 +36,10 @@ public class UIPanel : MonoBehaviour
             yAbility.sprite = player.currentAbilities[4].abilityStats.icon;
             rbAbility.sprite = player.currentAbilities[5].abilityStats.icon;
 
+
+            float mana = (float)player.mana;
+           
+
             sliderHp.value = (float)player.hp;
             sliderMana.value = (float)player.mana;
         }

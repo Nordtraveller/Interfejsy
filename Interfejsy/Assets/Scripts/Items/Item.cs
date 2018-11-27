@@ -50,11 +50,13 @@ public class Item : MonoBehaviour {
 
         this.changeItem = true;
 
+        /*
         for (int i = 0; i < 6; i++)
         {
             bool b = this.itemStats.type == GameObject.Find("GameManagers").GetComponent<Player>().allItems[i].itemStats.type;
             GameObject.Find("GameManagers").GetComponent<Player>().allItems[i].gameObject.SetActive(b);
         }
+        */
     }
 
     public void ChangeItem()
@@ -93,10 +95,12 @@ public class Item : MonoBehaviour {
         oldItem.itemStats = itemStats;
         oldItem.changeItem = false;
 
+        /*
         for (int i = 0; i < 6; i++)
         {           
             GameObject.Find("GameManagers").GetComponent<Player>().allItems[i].gameObject.SetActive(false);
         }
+        */
 
         if (oldItem.itemStats.type == itemType.Sword)
         {
