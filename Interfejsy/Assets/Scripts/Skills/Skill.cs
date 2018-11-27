@@ -9,6 +9,7 @@ public class Skill : MonoBehaviour {
 
     [SerializeField] public SkillStats skillStats;
     [SerializeField] private Image[] vizualizationBars;
+    [SerializeField] private Image fadeSkillImage;
     [SerializeField] private Skill[] skillsNeedToBeUnlocked;
     [SerializeField] private bool unlocked;
 
@@ -19,6 +20,7 @@ public class Skill : MonoBehaviour {
             unlocked = true;
             GameObject.Find("GameManagers").GetComponent<Player>().skillPointsToSpend--;
             GameObject.Find("GameManagers").GetComponent<Player>().unlockedSkills.Add(this);
+            fadeSkillImage.gameObject.SetActive(false);
             if (vizualizationBars.Length > 0)
             {
                 foreach (var bar in vizualizationBars)
