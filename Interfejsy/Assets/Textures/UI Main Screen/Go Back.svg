@@ -44,8 +44,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.375"
-     inkscape:cx="124.93565"
-     inkscape:cy="118.73169"
+     inkscape:cx="73.662923"
+     inkscape:cy="120.18624"
      inkscape:current-layer="layer2"
      showgrid="true"
      inkscape:document-units="px"
@@ -78,7 +78,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -101,10 +101,9 @@
      inkscape:label="Background"
      inkscape:groupmode="layer"
      style="display:inline"
-     transform="translate(0,192)"
-     sodipodi:insensitive="true">
+     transform="translate(0,192)">
     <rect
-       style="opacity:1;fill:#808080;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#filter5142)"
+       style="opacity:1;fill:#d45500;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#filter5142)"
        id="rect4145"
        width="256"
        height="256"
@@ -121,7 +120,7 @@
        xml:space="preserve"
        id="flowRoot4689"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#808080;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       transform="matrix(2.010415,0,0,2.010415,-129.7279,-548.39028)"><flowRegion
+       transform="matrix(2.010415,0,0,2.010415,-133.28947,-569.57594)"><flowRegion
          id="flowRegion4691"><rect
            id="rect4693"
            width="257.27298"
@@ -130,8 +129,8 @@
            y="199.94572"
            style="fill:#ffffff;stroke:#808080;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" /></flowRegion><flowPara
          id="flowPara4695"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:39.79277802px;font-family:'Stencil Std';-inkscape-font-specification:'Stencil Std Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke:#808080;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">GO</flowPara><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:39.79277802px;font-family:'Stencil Std';-inkscape-font-specification:'Stencil Std Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke:#808080;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:39.79277802px;font-family:Verdana;-inkscape-font-specification:'Verdana Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke:#d45500;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">GO</flowPara><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:39.79277802px;font-family:Verdana;-inkscape-font-specification:'Verdana Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke:#d45500;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="flowPara4147">BACK</flowPara></flowRoot>  </g>
   <g
      inkscape:groupmode="layer"

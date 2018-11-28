@@ -17,7 +17,7 @@
    viewBox="0 0 256 256"
    style="enable-background:new"
    sodipodi:docname="ExitIcon.svg"
-   inkscape:export-filename="E:\Uczelnia\Semestr VII\Projektowanie Interfejsów\Interfejsy\Interfejsy\Assets\Textures\UI Main Screen\SkilltreeIcon.png"
+   inkscape:export-filename="E:\Uczelnia\Semestr VII\Projektowanie Interfejsów\Interfejsy\Interfejsy\Assets\Textures\UI Main Screen\ExitIcon.png"
    inkscape:export-xdpi="180"
    inkscape:export-ydpi="180">
   <defs
@@ -44,8 +44,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.375"
-     inkscape:cx="27.315065"
-     inkscape:cy="193.46906"
+     inkscape:cx="67.019373"
+     inkscape:cy="164.37815"
      inkscape:current-layer="layer3"
      showgrid="true"
      inkscape:document-units="px"
@@ -78,7 +78,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -101,10 +101,9 @@
      inkscape:label="Background"
      inkscape:groupmode="layer"
      style="display:inline"
-     transform="translate(0,192)"
-     sodipodi:insensitive="true">
+     transform="translate(0,192)">
     <rect
-       style="opacity:1;fill:#808080;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#filter5142)"
+       style="opacity:1;fill:#d45500;fill-opacity:1;fill-rule:nonzero;stroke:#d45500;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#filter5142)"
        id="rect4145"
        width="256"
        height="256"
@@ -116,7 +115,7 @@
      id="layer2"
      inkscape:label="Text"
      transform="translate(0,192)"
-     style="display:inline"
+     style="display:none"
      sodipodi:insensitive="true">
     <flowRoot
        xml:space="preserve"
@@ -138,14 +137,14 @@
      inkscape:label="Icon"
      style="display:inline">
     <g
-       transform="matrix(0.32601942,0,0,0.32601942,46.495145,21.331329)"
+       transform="matrix(0.32601942,0,0,0.32601942,45.980882,40.445901)"
        id="g3"
-       style="fill:#ffffff;stroke:#808080;stroke-opacity:1;stroke-width:12.26920777;stroke-miterlimit:4;stroke-dasharray:none">
+       style="fill:#ffffff;stroke:#d45500;stroke-width:12.26920795;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">
       <path
          inkscape:connector-curvature="0"
          d="m 416.667,333.333 0,-66.666 -166.667,0 0,-66.667 166.667,0 0,-66.667 100,100 -100,100 z M 383.333,300 l 0,133.333 -166.666,0 0,100 -200,-100 0,-433.333 366.667,0 0,166.667 -33.334,0 0,-133.334 -266.667,0 133.334,66.667 0,300 133.333,0 0,-100 33.333,0 z"
          id="path5"
-         style="fill:#ffffff;stroke:#808080;stroke-opacity:1;stroke-width:12.26920777;stroke-miterlimit:4;stroke-dasharray:none" />
+         style="fill:#ffffff;stroke:#d45500;stroke-width:12.26920795;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     </g>
   </g>
 </svg>
