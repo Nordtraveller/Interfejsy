@@ -72,9 +72,8 @@ public class TextManager : MonoBehaviour {
                 }
             }
             currentAbilityDescription.text = "";
-        }
-           
-        }
+        } 
+    }
 
     void UpdateSkillDescription()
     {

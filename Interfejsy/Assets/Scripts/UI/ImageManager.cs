@@ -23,7 +23,7 @@ public class ImageManager : MonoBehaviour
     [SerializeField] private Image[] cdreduImages;
     [SerializeField] private Image abilityDescription;
     [SerializeField] private Image currentAbilityDescription;
-
+    [SerializeField] private Image[] currentXboxButton;
     [SerializeField] private Image currentHead;
     [SerializeField] private Image currentSword;
     [SerializeField] private Image currentArmor;
@@ -111,7 +111,18 @@ public class ImageManager : MonoBehaviour
             bAbility.sprite = GetComponent<Player>().currentAbilities[3].abilityStats.icon;
             yAbility.sprite = GetComponent<Player>().currentAbilities[4].abilityStats.icon;
             rbAbility.sprite = GetComponent<Player>().currentAbilities[5].abilityStats.icon;
-            for (int i = 0; i < 6; i++)
+
+            for (int row = 0; row < 6; row++)
+            {
+                for (int col = 0; col < 3; col++)
+                {
+                    if (GetComponent<MenusManager>().abillitiesMenu.itemsView[row, col] != null)
+                    {
+                        currentXboxButton[(col * 5) + row + col].gameObject.SetActive(false);
+                    }  
+                }
+            }
+                    for (int i = 0; i < 6; i++)
             {
                 if (GetComponent<Player>().currentAbilities[i].changeAbility)
                 {
@@ -121,7 +132,29 @@ public class ImageManager : MonoBehaviour
                 {
                     abilityChanging[i].gameObject.SetActive(false);
                 }
+                for (int row = 0; row < 6; row++)
+                {
+                    for (int col = 0; col < 3; col++)
+                    {
+                        if (GetComponent<MenusManager>().abillitiesMenu.itemsView[row, col] != null){
+                            if (GetComponent<MenusManager>().abillitiesMenu.itemsView[row, col].GetComponent<Ability>().abilityStats.name == GetComponent<Player>().currentAbilities[i].abilityStats.name)
+                            {
+                                Image [] temp = GetComponent<MenusManager>().abillitiesMenu.itemsView[i, 3].GetComponentsInChildren<Image>();
+                                for(int a=0; a<temp.Length; a++)
+                                {
+                                    if(temp[a].name == "xboxButton")
+                                    {
+                                        currentXboxButton[(col * 5) + row + col].sprite = temp[a].sprite;
+                                    }
+                                }
+                                currentXboxButton[(col * 5) + row + col].gameObject.SetActive(true);
+                            }
+                        }
+                        
+                    }
+                }
             }
+
         }
         else
         {
@@ -214,4 +247,5 @@ public class ImageManager : MonoBehaviour
             currentAbilityDescription.gameObject.SetActive(false);
         }
     }
+
 }
