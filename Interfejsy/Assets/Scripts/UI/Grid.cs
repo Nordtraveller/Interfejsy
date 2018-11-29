@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class Grid : MonoBehaviour {
 
-    [SerializeField] private GridItemTable itemsView;
+    [SerializeField] public GridItemTable itemsView;
 
     [SerializeField] private UnityEvent onMenuClick;
     [SerializeField] private Vector2Int defaultGridPosition;

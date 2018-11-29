@@ -21,6 +21,8 @@ public class ImageManager : MonoBehaviour
     [SerializeField] private Image addingSkillButton;
     [SerializeField] private Image[] havePointsToSpendBars;
     [SerializeField] private Image[] cdreduImages;
+    [SerializeField] private Image abilityDescription;
+    [SerializeField] private Image currentAbilityDescription;
 
     [SerializeField] private Image currentHead;
     [SerializeField] private Image currentSword;
@@ -40,6 +42,7 @@ public class ImageManager : MonoBehaviour
     void Update()
     {
         updateCurrentAbilities();
+        UpdateAbilityDescription();
         ManageChangeAbilityButton();
         setColourOfhavePointsToSpendBars();
         ManageAddSKillButton();
@@ -183,6 +186,32 @@ public class ImageManager : MonoBehaviour
             {
                 cdreduImages[i].gameObject.SetActive(false);
             }
+        }
+    }
+
+    void UpdateAbilityDescription()
+    {
+        if (GetComponent<MenusManager>().abillitiesMenu.enabled)
+        {
+            for (int i = 0; i < 6; i++)
+            {
+                if (GetComponent<MenusManager>().abillitiesMenu.currentItem == GetComponent<MenusManager>().abillitiesMenu.itemsView[i, 3])
+                {
+                    abilityDescription.gameObject.SetActive(false);
+                    currentAbilityDescription.gameObject.SetActive(true);
+                    return;
+                }
+            }
+            abilityDescription.gameObject.SetActive(true);
+            for (int i = 0; i < 6; i++)
+            {
+                if (GameObject.Find("GameManagers").GetComponent<Player>().currentAbilities[i].changeAbility)
+                {
+                    currentAbilityDescription.gameObject.SetActive(true);
+                    return;
+                }
+            }
+            currentAbilityDescription.gameObject.SetActive(false);
         }
     }
 }

@@ -13,6 +13,7 @@ public class TextManager : MonoBehaviour {
     [SerializeField] private Text intelligence;
     [SerializeField] private Text charisma;
     [SerializeField] private Text abilityDescription;
+    [SerializeField] private Text currentAbilityDescription;
     [SerializeField] private Text skillDescription;
     [SerializeField] private Text itemDesciption;
     [SerializeField] private Text dmgDone;
@@ -52,9 +53,28 @@ public class TextManager : MonoBehaviour {
     {
         if (GetComponent<MenusManager>().abillitiesMenu.enabled)
         {
+            for (int i = 0; i < 6; i++)
+            {
+                if (GetComponent<MenusManager>().abillitiesMenu.currentItem == GetComponent<MenusManager>().abillitiesMenu.itemsView[i, 3])
+                {
+                   abilityDescription.text = "";
+                   currentAbilityDescription.text = GetComponent<MenusManager>().abillitiesMenu.currentItem.GetComponent<Ability>().GetCompleteDescription();
+                    return;
+                }
+            }
             abilityDescription.text = GetComponent<MenusManager>().abillitiesMenu.currentItem.GetComponent<Ability>().GetCompleteDescription();
+            for (int i =0; i<6; i++)
+            {
+                if (GameObject.Find("GameManagers").GetComponent<Player>().currentAbilities[i].changeAbility)
+                {
+                    currentAbilityDescription.text = GameObject.Find("GameManagers").GetComponent<Player>().currentAbilities[i].GetCompleteDescription();
+                    return;
+                }
+            }
+            currentAbilityDescription.text = "";
         }
-    }
+           
+        }
 
     void UpdateSkillDescription()
     {
