@@ -43,10 +43,10 @@ public class TextManager : MonoBehaviour {
     void UpdateStats()
     {
         statPointsToSpendText.text = GetComponent<Player>().statPointsToSpend.ToString();
-        strenght.text = "Strenght:\t" + GetComponent<Player>().stats[0].ToString();
-        agility.text = "Agility:\t" +  GetComponent<Player>().stats[1].ToString();
-        intelligence.text = "Intelligence:\t" +  GetComponent<Player>().stats[2].ToString();
-        charisma.text = "Charisma:\t" +  GetComponent<Player>().stats[3].ToString();
+        strenght.text = "Str:\n" + GetComponent<Player>().stats[0].ToString();
+        agility.text = "Agi:\n" +  GetComponent<Player>().stats[1].ToString();
+        intelligence.text = "Int:\n" +  GetComponent<Player>().stats[2].ToString();
+        charisma.text = "Cha:\n" +  GetComponent<Player>().stats[3].ToString();
     }
 
     void UpdateAbilityDescription()

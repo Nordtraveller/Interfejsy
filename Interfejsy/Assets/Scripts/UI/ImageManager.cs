@@ -10,6 +10,7 @@ public class ImageManager : MonoBehaviour
     [SerializeField] private Image addToAgility;
     [SerializeField] private Image addToIntelligence;
     [SerializeField] private Image addToCharisma;
+    [SerializeField] private Image [] abilityVisualizationBars;
     [SerializeField] private Image lbAbility;
     [SerializeField] private Image xAbility;
     [SerializeField] private Image aAbility;
@@ -71,15 +72,27 @@ public class ImageManager : MonoBehaviour
     public void setStatsActivity()
     {
         Color color = Color.white;
-        if (GetComponent<Player>().statPointsToSpend == 0)
-        {
+        if (GetComponent<Player>().statPointsToSpend == 0) {
             color = Color.gray;
+            for (int i = 0; i < abilityVisualizationBars.Length; i++)
+            {
+                abilityVisualizationBars[i].GetComponent<Image>().color = Color.gray;
+            }
+        }
+        else
+        {
+            for (int i = 0; i < abilityVisualizationBars.Length; i++)
+            {
+                abilityVisualizationBars[i].GetComponent<Image>().color = Color.yellow;
+            }
         }
 
         addToStrenght.GetComponent<Image>().color = color;
         addToAgility.GetComponent<Image>().color = color;
         addToIntelligence.GetComponent<Image>().color = color;
         addToCharisma.GetComponent<Image>().color = color;
+
+       
     }
 
     public void updateCurrentItems()
