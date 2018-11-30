@@ -16,6 +16,8 @@ public struct PlayerInput {
 }
 
 public class Player : MonoBehaviour {
+    private float manaRegenerateTimer = 0.0f;
+
 
     public float hp = 100;
     public float mana = 200;
@@ -99,7 +101,20 @@ public class Player : MonoBehaviour {
                 GameObject.Find("GameManagers").GetComponent<Player>().currentAbilities[5].UseAbility();
             }
         }
-       // Debug.Log("Current mana: " + mana);
+        // Debug.Log("Current mana: " + mana);
+
+
+        // Mana regeneration - 1% per second
+        manaRegenerateTimer += Time.deltaTime;
+        if (manaRegenerateTimer > 1.0f)
+        {
+            float newMana = mana + 1.0f;
+            mana = Mathf.Min(newMana, 200.0f);
+
+            manaRegenerateTimer = 0.0f;
+        }
+
+
     }
 
     public void LevelUp()
