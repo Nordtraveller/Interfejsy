@@ -17,7 +17,7 @@ public class Grid : MonoBehaviour {
         if (defaultGridPosition == null) {
             for (int i = 0; i < itemsView.rowCount; i++) {
                 for (int j = 0; j < itemsView.colCount; j++) {
-                    if (itemsView[i, j] != null) {
+                    if (itemsView[i, j] != null && itemsView[i, j].active) {
                         defaultGridPosition = new Vector2Int(i, j);
                         break;
                     }
@@ -31,6 +31,7 @@ public class Grid : MonoBehaviour {
         }
 
         currentItem = itemsView[defaultGridPosition.x, defaultGridPosition.y];
+        currentItemPosition = new Vector2Int(defaultGridPosition.x, defaultGridPosition.y);
         currentItem.Select();
     }
 
@@ -60,7 +61,7 @@ public class Grid : MonoBehaviour {
             int colDifference = j * verticalInput;
             for (int i = currentItemPosition.x; i < itemsView.rowCount; i++) {
                 GridItem item = itemsView[i, NegativeMod(currentItemPosition.y + colDifference, itemsView.colCount)];
-                if (item != null) {
+                if (item != null && item.active) {
                     if (item != currentItem) {
                         currentItem.Disselect();
                         item.Select();
@@ -73,7 +74,7 @@ public class Grid : MonoBehaviour {
             }
             for (int i = currentItemPosition.x - 1; i >= 0 ; i--) {
                 GridItem item = itemsView[i, NegativeMod(currentItemPosition.y + colDifference, itemsView.colCount)];
-                if (item != null) {
+                if (item != null && item.active) {
                     if (item != currentItem) {
                         currentItem.Disselect();
                         item.Select();
@@ -95,7 +96,7 @@ public class Grid : MonoBehaviour {
 
             for (int j = currentItemPosition.y; j < itemsView.colCount; j++) {
                 GridItem item = itemsView[NegativeMod(currentItemPosition.x + rowDifference, itemsView.rowCount), currentItemPosition.y];
-                if (item != null) {
+                if (item != null && item.active) {
                     if (item != currentItem) {
                         currentItem.Disselect();
                         item.Select();
@@ -108,7 +109,7 @@ public class Grid : MonoBehaviour {
             }
             for (int j = currentItemPosition.y - 1; j >= 0; j--) {
                 GridItem item = itemsView[NegativeMod(currentItemPosition.x + rowDifference, itemsView.rowCount), currentItemPosition.y];
-                if (item != null) {
+                if (item != null && item.active) {
                     if (item != currentItem) {
                         currentItem.Disselect();
                         item.Select();

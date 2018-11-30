@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public class GridItem : MonoBehaviour {
+    public bool active = true;
 
     [SerializeField] private UnityEvent onClick;
     [SerializeField] private UnityEvent onSelect;
