@@ -101,11 +101,6 @@ public class Item : MonoBehaviour {
             GameObject.Find("GameManagers").GetComponent<Player>().allItems[i].gameObject.SetActive(false);
         }
         */
-
-        if (oldItem.itemStats.type == itemType.Sword)
-        {
-            GameObject.Find("EquimpentMenu").GetComponent<Grid>().currentItem = GameObject.Find("CurrentSwordItem").GetComponent<GridItem>();
-        }
     }
 
     public string getCompleteDesciption()

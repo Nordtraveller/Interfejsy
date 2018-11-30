@@ -16,6 +16,7 @@ public class TextManager : MonoBehaviour {
     [SerializeField] private Text currentAbilityDescription;
     [SerializeField] private Text skillDescription;
     [SerializeField] private Text itemDesciption;
+    [SerializeField] private Text currentItemDescription;
     [SerializeField] private Text dmgDone;
     [SerializeField] private Text[] cdredu;
 
@@ -87,17 +88,48 @@ public class TextManager : MonoBehaviour {
     {
         if (GetComponent<MenusManager>().equipmentMenu.enabled)
         {
-            var item = GetComponent<MenusManager>().equipmentMenu.currentItem.GetComponent<Item>();
-            if (item)
+            // We are only interested with Items
+            var isItem = GetComponent<MenusManager>().equipmentMenu.currentItem.GetComponent<Item>();
+            if (isItem == null)
             {
-                itemDesciption.text = item.getCompleteDesciption();
-            }
-            else
-            {
-                itemDesciption.text = "";
+                return;
             }
 
-           
+
+            var itemsGrid = GetComponent<MenusManager>().equipmentMenu.itemsView;
+
+            List<GridItem> gridItems = new List<GridItem>();
+
+            gridItems.Add(itemsGrid[1, 3]);
+            gridItems.Add(itemsGrid[1, 4]);
+            gridItems.Add(itemsGrid[1, 5]);
+            gridItems.Add(itemsGrid[2, 4]);
+
+            // Only active items
+            for (int i=0; i < 4; i++)
+            {
+                if (GetComponent<MenusManager>().equipmentMenu.currentItem == gridItems[i])
+                {
+                    itemDesciption.text = "";
+                    currentItemDescription.text = GetComponent<MenusManager>().equipmentMenu.currentItem.GetComponent<Item>().getCompleteDesciption();
+                    return;
+                }
+            }
+
+            // the focus is on possibly new item
+            itemDesciption.text = GetComponent<MenusManager>().equipmentMenu.currentItem.GetComponent<Item>().getCompleteDesciption();
+
+            // keep
+            for (int i=0; i < 4; i++)
+            {
+                if (GameObject.Find("GameManagers").GetComponent<Player>().currentItems[i].changeItem)
+                {
+                    currentItemDescription.text = GameObject.Find("GameManagers").GetComponent<Player>().currentItems[i].getCompleteDesciption();
+                    return;
+                }
+            }
+
+            currentItemDescription.text = "";
         }
     }
 
