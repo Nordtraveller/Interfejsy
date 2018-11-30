@@ -29,7 +29,6 @@ public class Ability : MonoBehaviour {
     private float lastCdUpdate = 0.0f;
     public bool changeAbility;
 
-
     // Use this for initialization
     void Start () {
         changeAbility = false;
@@ -39,7 +38,7 @@ public class Ability : MonoBehaviour {
 	public void Update () {
         if(currentCooldown > 0)
         {
-            currentCooldown -= Time.deltaTime;
+            
             //Debug.Log(currentCooldown);
             /*lastCdUpdate += Time.deltaTime;
             if (lastCdUpdate >= 1.0f)
@@ -47,6 +46,18 @@ public class Ability : MonoBehaviour {
                 lastCdUpdate = 0f;
                 currentCooldown -= 1;
             }*/
+
+
+            if (abilityStats.dmgtype == damageType.Heal)
+            {
+                var player = GameObject.Find("GameManagers").GetComponent<Player>();
+                             
+                float hpIncrease = Time.deltaTime * (abilityStats.damage / abilityStats.coolDown);
+                player.hp += hpIncrease;
+                player.hp = Mathf.Min(player.hp, 100.0f);
+            }
+
+            currentCooldown -= Time.deltaTime;
         }
 	}
 
@@ -58,18 +69,7 @@ public class Ability : MonoBehaviour {
         {
             GameObject.Find("GameManagers").GetComponent<Player>().mana -= abilityStats.manaCost;
             currentCooldown = abilityStats.coolDown;
-            if(abilityStats.dmgtype == damageType.Heal)
-            {
-                if (GameObject.Find("GameManagers").GetComponent<Player>().hp + abilityStats.damage <= 100)
-                {
-                    GameObject.Find("GameManagers").GetComponent<Player>().hp += abilityStats.damage;
-                }
-                else
-                {
-                    GameObject.Find("GameManagers").GetComponent<Player>().hp = 100;
-                }
-            }
-        }      
+        }
     }
 
     public string GetCompleteDescription()

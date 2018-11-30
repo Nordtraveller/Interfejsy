@@ -17,8 +17,8 @@ public struct PlayerInput {
 
 public class Player : MonoBehaviour {
 
-    public int hp = 100;
-    public int mana = 200;
+    public float hp = 100;
+    public float mana = 200;
     public int[] stats;
     public int level = 1;
     public int statPointsSpend = 0;
