@@ -16,6 +16,8 @@ public class UIPanel : MonoBehaviour
     [SerializeField] private Slider sliderHp;
     [SerializeField] private Slider sliderMana;
 
+    [SerializeField] public Slider healBar;
+
     // Use this for initialization
     void Start()
     {

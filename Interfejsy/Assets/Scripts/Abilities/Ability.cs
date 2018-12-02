@@ -29,6 +29,8 @@ public class Ability : MonoBehaviour {
     private float lastCdUpdate = 0.0f;
     public bool changeAbility;
 
+    private float finalHpAfterHeal = 0.0f;
+
     // Use this for initialization
     void Start () {
         changeAbility = false;
@@ -51,7 +53,16 @@ public class Ability : MonoBehaviour {
             if (abilityStats.dmgtype == damageType.Heal)
             {
                 var player = GameObject.Find("GameManagers").GetComponent<Player>();
-                             
+
+
+                // Caclulate new position of heal bar
+
+
+                var healBar = GameObject.Find("ui_controls").GetComponent<UIPanel>().healBar;
+                healBar.minValue = 0.0f;
+                healBar.value = finalHpAfterHeal;
+
+                
                 float hpIncrease = Time.deltaTime * (abilityStats.damage / abilityStats.coolDown);
                 player.hp += hpIncrease;
                 player.hp = Mathf.Min(player.hp, 100.0f);
@@ -69,6 +80,20 @@ public class Ability : MonoBehaviour {
         {
             GameObject.Find("GameManagers").GetComponent<Player>().mana -= abilityStats.manaCost;
             currentCooldown = abilityStats.coolDown;
+
+            if (abilityStats.dmgtype == damageType.Heal)
+            {
+                finalHpAfterHeal = GameObject.Find("GameManagers").GetComponent<Player>().hp + abilityStats.damage;
+                finalHpAfterHeal = Mathf.Min(finalHpAfterHeal, 100.0f);
+
+                var healBar = GameObject.Find("ui_controls").GetComponent<UIPanel>().healBar;
+                healBar.enabled = true;
+            }
+            else
+            {
+                var healBar = GameObject.Find("ui_controls").GetComponent<UIPanel>().healBar;
+                healBar.enabled = false;
+            }
         }
     }
 
