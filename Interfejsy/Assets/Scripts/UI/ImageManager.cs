@@ -133,10 +133,10 @@ public class ImageManager : MonoBehaviour
                     if (GetComponent<MenusManager>().abillitiesMenu.itemsView[row, col] != null)
                     {
                         currentXboxButton[(col * 5) + row + col].gameObject.SetActive(false);
-                    }  
+                    }
                 }
             }
-                    for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 6; i++)
             {
                 if (GetComponent<Player>().currentAbilities[i].changeAbility)
                 {
@@ -150,13 +150,14 @@ public class ImageManager : MonoBehaviour
                 {
                     for (int col = 0; col < 3; col++)
                     {
-                        if (GetComponent<MenusManager>().abillitiesMenu.itemsView[row, col] != null){
+                        if (GetComponent<MenusManager>().abillitiesMenu.itemsView[row, col] != null)
+                        {
                             if (GetComponent<MenusManager>().abillitiesMenu.itemsView[row, col].GetComponent<Ability>().abilityStats.name == GetComponent<Player>().currentAbilities[i].abilityStats.name)
                             {
-                                Image [] temp = GetComponent<MenusManager>().abillitiesMenu.itemsView[i, 3].GetComponentsInChildren<Image>();
-                                for(int a=0; a<temp.Length; a++)
+                                Image[] temp = GetComponent<MenusManager>().abillitiesMenu.itemsView[i, 3].GetComponentsInChildren<Image>();
+                                for (int a = 0; a < temp.Length; a++)
                                 {
-                                    if(temp[a].name == "xboxButton")
+                                    if (temp[a].name == "xboxButton")
                                     {
                                         currentXboxButton[(col * 5) + row + col].sprite = temp[a].sprite;
                                     }
@@ -164,11 +165,76 @@ public class ImageManager : MonoBehaviour
                                 currentXboxButton[(col * 5) + row + col].gameObject.SetActive(true);
                             }
                         }
-                        
+
                     }
                 }
             }
 
+            //makegridInactiveOrActive
+            for (int i = 0; i < 6; i++)
+            {
+                if (GameObject.Find("GameManagers").GetComponent<Player>().currentAbilities[i].changeAbility)
+                {
+                    if (i == 0 || i == 5)
+                    {
+                        for (int row = 0; row < 6; row++)
+                        {
+                            for (int col = 0; col < 3; col++)
+                            {
+                                if (GetComponent<MenusManager>().abillitiesMenu.itemsView[row, col] != null && row != i)
+                                {
+                                    GetComponent<MenusManager>().abillitiesMenu.itemsView[row, col].active = false;
+                                }
+                                else
+                                {
+                                    if (GetComponent<MenusManager>().abillitiesMenu.itemsView[row, col] != null)
+                                    {
+                                        GetComponent<MenusManager>().abillitiesMenu.itemsView[row, col].active = true;
+                                    }
+                                }
+                                if (row == 5 && col == 2)
+                                {
+                                    return;
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        for (int row = 0; row < 6; row ++)
+                        {
+                            for (int col = 0; col < 3; col++)
+                            {
+                                if (GetComponent<MenusManager>().abillitiesMenu.itemsView[row, col] != null && (row == 0 || row == 5))
+                                {
+                                    GetComponent<MenusManager>().abillitiesMenu.itemsView[row, col].active = false;
+                                }
+                                else
+                                {
+                                    if (GetComponent<MenusManager>().abillitiesMenu.itemsView[row, col] != null)
+                                    {
+                                        GetComponent<MenusManager>().abillitiesMenu.itemsView[row, col].active = true;
+                                    }
+                                }
+                                if (row == 5 && col == 2)
+                                {
+                                    return;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            for (int row = 0; row < 6; row++)
+            {
+                for (int col = 0; col < 3; col++)
+                {
+                    if (GetComponent<MenusManager>().abillitiesMenu.itemsView[row, col] != null)
+                    {
+                        GetComponent<MenusManager>().abillitiesMenu.itemsView[row, col].active = true;
+                    }
+                }
+            }
         }
         else
         {
@@ -179,6 +245,7 @@ public class ImageManager : MonoBehaviour
             }
         }
     }
+
 
     void ManageChangeAbilityButton()
     {
