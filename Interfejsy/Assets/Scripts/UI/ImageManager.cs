@@ -49,6 +49,7 @@ public class ImageManager : MonoBehaviour
         ManageAddSKillButton();
         updateCurrentItems();
         ManageCdRedu();
+        ManageGreenFadeInSkillTree();
     }
 
     void setColourOfhavePointsToSpendBars()
@@ -57,7 +58,7 @@ public class ImageManager : MonoBehaviour
         {
             foreach (var bar in havePointsToSpendBars)
             {
-                bar.GetComponent<Image>().color = Color.red;
+                bar.GetComponent<Image>().color = Color.yellow;
             }
         }
         else
@@ -258,6 +259,21 @@ public class ImageManager : MonoBehaviour
                 }
             }
             currentAbilityDescription.gameObject.SetActive(false);
+        }
+    }
+
+    void ManageGreenFadeInSkillTree()
+    {
+        foreach (var skill in GetComponent<Player>().skills)
+        {
+            if (skill.CheckIfUnlockAble())
+            {
+                skill.fadeSkillImage.GetComponent<Image>().color = Color.green;
+            }
+            else
+            {
+                skill.fadeSkillImage.GetComponent<Image>().color = Color.white;
+            }
         }
     }
 

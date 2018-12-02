@@ -9,7 +9,7 @@ public class Skill : MonoBehaviour {
 
     [SerializeField] public SkillStats skillStats;
     [SerializeField] private Image[] vizualizationBars;
-    [SerializeField] private Image fadeSkillImage;
+    [SerializeField] public Image fadeSkillImage;
     [SerializeField] private Skill[] skillsNeedToBeUnlocked;
     [SerializeField] private bool unlocked;
 
@@ -25,7 +25,7 @@ public class Skill : MonoBehaviour {
             {
                 foreach (var bar in vizualizationBars)
                 {
-                    bar.GetComponent<Image>().color = Color.red;
+                    bar.GetComponent<Image>().color = Color.yellow;
                 }
             }
         }

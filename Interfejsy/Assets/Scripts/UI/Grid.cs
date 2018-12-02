@@ -41,6 +41,10 @@ public class Grid : MonoBehaviour {
         if (input.menu) {
             onMenuClick?.Invoke();
         }
+        if (input.B && !GameObject.Find("GameManagers").GetComponent<MenusManager>().areDisabled())
+        {
+            onMenuClick?.Invoke();
+        }
 
         HorizontalUpdate(input.horizontal);
         VerticalUpdate(input.vertical);
