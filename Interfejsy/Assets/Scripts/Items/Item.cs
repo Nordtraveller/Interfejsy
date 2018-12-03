@@ -92,7 +92,7 @@ public class Item : MonoBehaviour {
             alreadyUsed.itemStats = oldItem.itemStats;
         }
 
-        oldItem.itemStats = itemStats;
+        oldItem.itemStats = this.itemStats;
         oldItem.changeItem = false;
 
         /*
