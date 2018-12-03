@@ -10,7 +10,7 @@ public class ImageManager : MonoBehaviour
     [SerializeField] private Image addToAgility;
     [SerializeField] private Image addToIntelligence;
     [SerializeField] private Image addToCharisma;
-    [SerializeField] private Image [] abilityVisualizationBars;
+    [SerializeField] private Image[] abilityVisualizationBars;
     [SerializeField] private Image lbAbility;
     [SerializeField] private Image xAbility;
     [SerializeField] private Image aAbility;
@@ -21,6 +21,9 @@ public class ImageManager : MonoBehaviour
     [SerializeField] private Image changeAbilityButton;
     [SerializeField] private Image addingSkillButton;
     [SerializeField] private Image changeItemButton;
+
+    [SerializeField] private Image[] currentItemsStatus;
+
     [SerializeField] private Image[] havePointsToSpendBars;
     [SerializeField] private Image[] cdreduImages;
     [SerializeField] private Image abilityDescription;
@@ -75,7 +78,8 @@ public class ImageManager : MonoBehaviour
     public void setStatsActivity()
     {
         Color color = Color.white;
-        if (GetComponent<Player>().statPointsToSpend == 0) {
+        if (GetComponent<Player>().statPointsToSpend == 0)
+        {
             color = Color.gray;
             for (int i = 0; i < abilityVisualizationBars.Length; i++)
             {
@@ -95,7 +99,7 @@ public class ImageManager : MonoBehaviour
         addToIntelligence.GetComponent<Image>().color = color;
         addToCharisma.GetComponent<Image>().color = color;
 
-       
+
     }
 
     public void updateCurrentItems()
@@ -113,6 +117,50 @@ public class ImageManager : MonoBehaviour
                     itemsChanging[i].gameObject.SetActive(true);
                 else
                     itemsChanging[i].gameObject.SetActive(false);
+            }
+
+            /*
+            for (int i=0; i < 4; i++)
+            {
+                Debug.Log(GetComponent<Player>().currentAbilities[i].name);
+                Debug.Log("\n");
+            }
+            Debug.Log("\n");
+            */
+
+            for (int row = 0; row < 2; row++)
+            {
+                for (int col = 0; col < 4; col++)
+                {
+                    if (GetComponent<MenusManager>().equipmentMenu.itemsView[row, col] != null)
+                    {
+                        currentItemsStatus[2 + col + row].gameObject.SetActive(false);
+                    }
+                }
+            }
+
+            for (int row = 0; row < 4; row++)
+            {
+                for (int col = 0; col < 2; col++)
+                {
+                    if (GetComponent<MenusManager>().equipmentMenu.itemsView[row, col] != null)
+                    {
+                        // string s = GetComponent<MenusManager>().equipmentMenu.itemsView[row, col].GetComponent<Item>().itemStats.itemName;
+                        // Debug.Log("For row = " + row + " col = " + col);
+                        // Debug.Log(s);
+
+                        bool bCurrentlyUsed = false;
+                        for (int item = 0; item < 4; item++)
+                        {
+                            if (GetComponent<MenusManager>().equipmentMenu.itemsView[row, col].GetComponent<Item>().itemStats.itemName == GetComponent<Player>().currentItems[item].itemStats.itemName)
+                            {
+                                bCurrentlyUsed = true;
+                            }
+                        }
+
+                        currentItemsStatus[2 * row + col].gameObject.SetActive(bCurrentlyUsed);
+                    }
+                }
             }
         }
     }
@@ -203,7 +251,7 @@ public class ImageManager : MonoBehaviour
                     }
                     else
                     {
-                        for (int row = 0; row < 6; row ++)
+                        for (int row = 0; row < 6; row++)
                         {
                             for (int col = 0; col < 3; col++)
                             {
@@ -293,11 +341,11 @@ public class ImageManager : MonoBehaviour
                 // Check if user has in focus "current" item (lower panel)
                 var itemsGrid = GetComponent<MenusManager>().equipmentMenu.itemsView;
                 List<GridItem> gridItems = new List<GridItem>();
-           
+
                 // Only active items
                 for (int i = 0; i < 4; i++)
                 {
-                    if (GetComponent<MenusManager>().equipmentMenu.currentItem == itemsGrid[i,2])
+                    if (GetComponent<MenusManager>().equipmentMenu.currentItem == itemsGrid[i, 2])
                     {
                         changeItemButton.gameObject.SetActive(true);
                         return;
@@ -324,12 +372,13 @@ public class ImageManager : MonoBehaviour
 
     public void ManageCdRedu()
     {
-        for(int i=0; i<6; i++)
+        for (int i = 0; i < 6; i++)
         {
             if (GameObject.Find("GameManagers").GetComponent<Player>().currentAbilities[i].currentCooldown > 0.0f)
             {
                 cdreduImages[i].gameObject.SetActive(true);
-            }else
+            }
+            else
             {
                 cdreduImages[i].gameObject.SetActive(false);
             }
