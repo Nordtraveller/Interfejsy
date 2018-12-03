@@ -18,6 +18,16 @@ public class UIPanel : MonoBehaviour
 
     [SerializeField] public Slider healBar;
 
+    private bool showLevelPopup = true;
+    private float levelPopupAlpha = 0.5f;
+
+    public void showLevelUpPopup()
+    {
+        showLevelPopup = true;
+        levelPopupAlpha = 0.5f;
+    }
+
+
     // Use this for initialization
     void Start()
     {
@@ -44,6 +54,28 @@ public class UIPanel : MonoBehaviour
 
             sliderHp.value = (float)player.hp;
             sliderMana.value = (float)player.mana;
+        }
+
+        // Dismissable popup
+        {
+            var popup = GameObject.Find("popup_levelUp").GetComponent<Image>();
+
+            if (showLevelPopup)
+            {
+                if (player.skillPointsToSpend > 0)
+                {
+                    popup.enabled = true;
+                }
+
+                if (levelPopupAlpha > 0.0f)
+                {
+                    levelPopupAlpha -= Time.deltaTime * (0.5f / 5.0f);
+
+                    Color clr = GameObject.Find("popup_levelUp").GetComponent<Image>().color;
+                    clr.a = levelPopupAlpha;
+                    GameObject.Find("popup_levelUp").GetComponent<Image>().color = clr;
+                }
+            }       
         }
     }
 };

@@ -103,6 +103,11 @@ public class Player : MonoBehaviour {
         }
         // Debug.Log("Current mana: " + mana);
 
+        // debug
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            LevelUp();
+        }
 
         // Mana regeneration - 1% per second
         manaRegenerateTimer += Time.deltaTime;
@@ -122,6 +127,8 @@ public class Player : MonoBehaviour {
         level += 1;
         statPointsToSpend += 3;
         GetComponent<ImageManager>().setStatsActivity();
+
+        GameObject.Find("ui_controls").GetComponent<UIPanel>().showLevelUpPopup();
 
         Debug.Log("Current level: " + level);
     }
