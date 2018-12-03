@@ -20,6 +20,7 @@ public class ImageManager : MonoBehaviour
     [SerializeField] private Image[] abilityChanging;
     [SerializeField] private Image changeAbilityButton;
     [SerializeField] private Image addingSkillButton;
+    [SerializeField] private Image changeItemButton;
     [SerializeField] private Image[] havePointsToSpendBars;
     [SerializeField] private Image[] cdreduImages;
     [SerializeField] private Image abilityDescription;
@@ -47,6 +48,7 @@ public class ImageManager : MonoBehaviour
         ManageChangeAbilityButton();
         setColourOfhavePointsToSpendBars();
         ManageAddSKillButton();
+        ManageChangeItemButton();
         updateCurrentItems();
         ManageCdRedu();
         ManageGreenFadeInSkillTree();
@@ -275,6 +277,37 @@ public class ImageManager : MonoBehaviour
         }
     }
 
+    void ManageChangeItemButton()
+    {
+        if (GetComponent<MenusManager>().equipmentMenu.enabled)
+        {
+            var isItem = GetComponent<MenusManager>().equipmentMenu.currentItem.GetComponent<Item>();
+            if (isItem == null)
+            {
+                changeItemButton.gameObject.SetActive(false);
+            }
+            else
+            {
+                // User moves along Items
+
+                // Check if user has in focus "current" item (lower panel)
+                var itemsGrid = GetComponent<MenusManager>().equipmentMenu.itemsView;
+                List<GridItem> gridItems = new List<GridItem>();
+           
+                // Only active items
+                for (int i = 0; i < 4; i++)
+                {
+                    if (GetComponent<MenusManager>().equipmentMenu.currentItem == itemsGrid[i,2])
+                    {
+                        changeItemButton.gameObject.SetActive(true);
+                        return;
+                    }
+                }
+
+                changeItemButton.gameObject.SetActive(false);
+            }
+        }
+    }
 
     void ManageAddSKillButton()
     {

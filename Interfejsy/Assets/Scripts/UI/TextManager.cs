@@ -100,10 +100,10 @@ public class TextManager : MonoBehaviour {
 
             List<GridItem> gridItems = new List<GridItem>();
 
-            gridItems.Add(itemsGrid[1, 3]);
-            gridItems.Add(itemsGrid[1, 4]);
-            gridItems.Add(itemsGrid[1, 5]);
-            gridItems.Add(itemsGrid[2, 4]);
+            gridItems.Add(itemsGrid[0, 2]);
+            gridItems.Add(itemsGrid[1, 2]);
+            gridItems.Add(itemsGrid[2, 2]);
+            gridItems.Add(itemsGrid[3, 2]);
 
             // Only active items
             for (int i=0; i < 4; i++)
