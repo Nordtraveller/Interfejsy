@@ -34,6 +34,9 @@ public class ImageManager : MonoBehaviour
     [SerializeField] private Image currentArmor;
     [SerializeField] private Image currentShield;
 
+
+    [SerializeField] private Image currentItemDecription;
+    [SerializeField] private Image itemDescription;
     [SerializeField] private Image[] itemsChanging;
     //[SerializeField] private Image change
 
@@ -51,10 +54,63 @@ public class ImageManager : MonoBehaviour
         ManageChangeAbilityButton();
         setColourOfhavePointsToSpendBars();
         ManageAddSKillButton();
+
+        updateItemDescription();
         ManageChangeItemButton();
         updateCurrentItems();
         ManageCdRedu();
         ManageGreenFadeInSkillTree();
+    }
+
+    public void updateItemDescription()
+    {
+        if (GetComponent<MenusManager>().equipmentMenu.enabled)
+        {
+            // We are only interested with Items
+            var isItem = GetComponent<MenusManager>().equipmentMenu.currentItem.GetComponent<Item>();
+            if (isItem == null)
+            {
+                itemDescription.gameObject.SetActive(false);
+                currentItemDecription.gameObject.SetActive(false);
+
+                return;
+            }
+            
+
+            var itemsGrid = GetComponent<MenusManager>().equipmentMenu.itemsView;
+
+            List<GridItem> gridItems = new List<GridItem>();
+            gridItems.Add(itemsGrid[0, 2]);
+            gridItems.Add(itemsGrid[1, 2]);
+            gridItems.Add(itemsGrid[2, 2]);
+            gridItems.Add(itemsGrid[3, 2]);
+
+            bool bShowCurrentItemDescription = false;
+            for (int i = 0; i < 4; ++i)
+            {
+                if (GetComponent<Player>().currentItems[i].changeItem)
+                    bShowCurrentItemDescription = true;
+            }
+
+
+            // Active items
+            for (int i = 0; i < 4; i++)
+            {
+                if (GetComponent<MenusManager>().equipmentMenu.currentItem == gridItems[i])
+                {
+                    bShowCurrentItemDescription = true;
+
+                    itemDescription.gameObject.SetActive(false);
+                    currentItemDecription.gameObject.SetActive(bShowCurrentItemDescription);
+                    return;
+                }
+            }
+            
+            // The user is focused on item from upper panel now.
+         
+            currentItemDecription.gameObject.SetActive(bShowCurrentItemDescription);
+            itemDescription.gameObject.SetActive(true);
+        }
     }
 
     void setColourOfhavePointsToSpendBars()
@@ -102,6 +158,7 @@ public class ImageManager : MonoBehaviour
 
     }
 
+    // Update which items in eqiupment are marked with "currently used".
     public void updateCurrentItems()
     {
         if (GetComponent<MenusManager>().equipmentMenu.enabled)
