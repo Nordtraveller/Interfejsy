@@ -21,9 +21,6 @@ public class ImageManager : MonoBehaviour
     [SerializeField] private Image changeAbilityButton;
     [SerializeField] private Image addingSkillButton;
     [SerializeField] private Image changeItemButton;
-
-    [SerializeField] private Image[] currentItemsStatus;
-
     [SerializeField] private Image[] havePointsToSpendBars;
     [SerializeField] private Image[] cdreduImages;
     [SerializeField] private Image abilityDescription;
@@ -116,50 +113,6 @@ public class ImageManager : MonoBehaviour
                     itemsChanging[i].gameObject.SetActive(true);
                 else
                     itemsChanging[i].gameObject.SetActive(false);
-            }
-
-            /*
-            for (int i=0; i < 4; i++)
-            {
-                Debug.Log(GetComponent<Player>().currentAbilities[i].name);
-                Debug.Log("\n");
-            }
-            Debug.Log("\n");
-            */
-
-            for (int row = 0; row < 2; row++)
-            {
-                for (int col = 0; col < 4; col++)
-                {
-                    if (GetComponent<MenusManager>().equipmentMenu.itemsView[row, col] != null)
-                    {
-                        currentItemsStatus[2 + col + row].gameObject.SetActive(false);
-                    }
-                }
-            }
-
-            for (int row = 0; row < 4; row++)
-            {
-                for (int col = 0; col < 2; col++)
-                {
-                    if (GetComponent<MenusManager>().equipmentMenu.itemsView[row, col] != null)
-                    {
-                        // string s = GetComponent<MenusManager>().equipmentMenu.itemsView[row, col].GetComponent<Item>().itemStats.itemName;
-                        // Debug.Log("For row = " + row + " col = " + col);
-                        // Debug.Log(s);
-
-                        bool bCurrentlyUsed = false;                    
-                        for (int item = 0; item < 4; item++)
-                        {
-                            if (GetComponent<MenusManager>().equipmentMenu.itemsView[row, col].GetComponent<Item>().itemStats.itemName == GetComponent<Player>().currentItems[item].itemStats.itemName)
-                            {
-                                bCurrentlyUsed = true;
-                            }
-                        }
-
-                        currentItemsStatus[2 * row + col].gameObject.SetActive(bCurrentlyUsed);
-                    }
-                }
             }
         }
     }
