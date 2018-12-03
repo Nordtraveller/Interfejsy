@@ -105,16 +105,18 @@ public class Item : MonoBehaviour {
 
     public string getCompleteDesciption()
     {
-        string result = itemStats.itemDescription;
+        string result = "";
         if (itemStats.armor > 0)
         {
-            result += ", armor: " + itemStats.armor;
+            result += "<b>Armor:</b> " + itemStats.armor;
         }
 
         if (itemStats.damage > 0)
         {
-            result += ", damage: " + itemStats.damage;
+            result += "<b>Damage:</b> " + itemStats.damage;
         }
+
+        result += "\n" + itemStats.itemDescription;
 
         return result;
     }

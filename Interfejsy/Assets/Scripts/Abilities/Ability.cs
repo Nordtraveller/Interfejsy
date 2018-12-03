@@ -99,10 +99,10 @@ public class Ability : MonoBehaviour {
 
     public string GetCompleteDescription()
     {
-        string result = abilityStats.name;
+        string result = abilityStats.name + "\n";
         if (abilityStats.manaCost > 0)
         {
-            result += "\tmana:" + abilityStats.manaCost;
+            result += "\t<b>Mana:</b> " + abilityStats.manaCost;
         }
         else
         {
@@ -110,7 +110,7 @@ public class Ability : MonoBehaviour {
         }
         if (abilityStats.damage > 0)
         {
-            result += "\tdamage:" + abilityStats.damage + "(" + abilityStats.dmgtype + ")";
+            result += "\t<b>Damage:</b> " + abilityStats.damage + "(" + abilityStats.dmgtype + ")";
         }
         else
         {
@@ -118,9 +118,9 @@ public class Ability : MonoBehaviour {
         }
         if (abilityStats.coolDown > 0)
         {
-            result += "\tcd:" + abilityStats.coolDown;
+            result += "\t<b>Cooldown:</b> " + abilityStats.coolDown;
         }
-        result += "\n\n" + abilityStats.description;
+        result += "\n" + abilityStats.description;
         return result;
     }
 
